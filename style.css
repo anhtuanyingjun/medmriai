@@ -1,30 +1,42 @@
-/* Body và Typography */
+/* Body */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f0f4f8;
     color: #333;
 }
 
-/* Nội dung chính */
+/* Header */
+.header {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar .nav-link {
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    color: #fd7e14;
+}
+
+/* Main content */
 .main-content {
     background-color: #fff;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
 }
 
-.main-content h1 {
-    color: #007bff;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.main-content p {
-    color: #555;
-    font-size: 1.1em;
-}
-
-/* Footer nâng cấp */
+/* Footer */
 .footer {
     background-color: #343a40;
     color: #fff;
@@ -32,59 +44,14 @@ body {
     margin-top: 50px;
 }
 
-.footer a {
-    color: #fd7e14;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.footer .social-icons i {
-    font-size: 1.5em;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.footer .social-icons i:hover {
-    color: #fd7e14;
-}
-
-/* Tùy chỉnh Bootstrap */
-.nav-link {
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #fd7e14 !important;
-}
-
-/* Media queries cho tối ưu trên thiết bị */
+/* Responsive: Collapse sidebar on mobile */
 @media (max-width: 768px) {
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
     .main-content {
         padding: 20px;
-    }
-
-    .footer {
-        padding: 20px 0;
-    }
-
-    .social-icons {
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    h1 {
-        font-size: 1.8em; /* Giảm kích thước tiêu đề trên mobile */
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    .btn {
-        width: 100%; /* Button full-width trên mobile */
     }
 }
