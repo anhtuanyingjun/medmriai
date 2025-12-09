@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scroll cho links (nếu có anchors)
+    // Smooth scroll cho links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();

@@ -1,4 +1,4 @@
-/* CSS Variables cho dễ tùy chỉnh và dark mode */
+/* CSS Variables cho dark mode tối ưu */
 :root {
     --bg-color: #f0f4f8;
     --text-color: #333;
@@ -6,7 +6,12 @@
     --primary-color: #007bff;
     --accent-color: #fd7e14;
     --footer-bg: #343a40;
+    --navbar-bg: linear-gradient(90deg, #007bff, #0056b3);
+    --navbar-text: #fff;
     --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --input-bg: #fff;
+    --input-text: #333;
+    --btn-outline-border: #fff;
 }
 
 body.dark-mode {
@@ -16,7 +21,12 @@ body.dark-mode {
     --primary-color: #0d6efd;
     --accent-color: #fd7e14;
     --footer-bg: #000;
-    --shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    --navbar-bg: linear-gradient(90deg, #1e1e1e, #333);
+    --navbar-text: #e0e0e0;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    --input-bg: #333;
+    --input-text: #e0e0e0;
+    --btn-outline-border: #e0e0e0;
 }
 
 /* Body và Typography */
@@ -27,9 +37,55 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Navbar - Giữ nguyên nhưng thêm transition */
+/* Navbar tối ưu cho dark mode */
 .navbar {
+    background: var(--navbar-bg) !important;
+    color: var(--navbar-text);
     transition: background 0.3s ease;
+}
+
+.navbar .nav-link {
+    color: var(--navbar-text) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar .btn-outline {
+    border-color: var(--btn-outline-border);
+    color: var(--navbar-text);
+}
+
+/* Hero Section cho trang chủ hiện đại */
+.hero {
+    background-image: url('https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    color: #fff;
+    position: relative;
+    transition: filter 0.3s ease;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay tối cho text dễ đọc */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-mode .hero {
+    filter: brightness(0.8); /* Làm tối hơn ở dark mode */
 }
 
 /* Nội dung chính */
@@ -38,18 +94,29 @@ body {
     border-radius: 12px;
     box-shadow: var(--shadow);
     padding: 30px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.main-content h1 {
+.main-content h1, .card-title {
     color: var(--primary-color);
-    margin-bottom: 20px;
-    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
-.main-content p {
+.main-content p, .card-text {
     color: var(--text-color);
     font-size: 1.1em;
+}
+
+/* Form elements cho dark mode */
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-label {
+    color: var(--text-color);
 }
 
 /* Animation fade-in */
@@ -62,7 +129,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Progress bars cho skills */
+/* Progress bars */
 .progress-bar {
     transition: width 0.5s ease;
 }
@@ -88,140 +155,7 @@ body {
 .footer .social-icons i {
     font-size: 1.5em;
     margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.footer .social-icons i:hover {
-    color: var(--accent-color);
-}
-
-/* Tùy chỉnh Bootstrap */
-.nav-link {
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--accent-color) !important;
-}
-
-.card {
-    background-color: var(--card-bg);
-    transition: background-color 0.3s ease;
-}
-
-/* Media queries */
-@media (max-width: 768px) {
-    .main-content {
-        padding: 20px;
-    }
-
-    .footer {
-        padding: 20px 0;
-    }
-}
-
-@media (max-width: 576px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    .btn {
-        width: 100%;
-    }
-}/* CSS Variables cho dễ tùy chỉnh và dark mode */
-:root {
-    --bg-color: #f0f4f8;
-    --text-color: #333;
-    --card-bg: #fff;
-    --primary-color: #007bff;
-    --accent-color: #fd7e14;
-    --footer-bg: #343a40;
-    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --card-bg: #1e1e1e;
-    --primary-color: #0d6efd;
-    --accent-color: #fd7e14;
-    --footer-bg: #000;
-    --shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Body và Typography */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Navbar - Giữ nguyên nhưng thêm transition */
-.navbar {
-    transition: background 0.3s ease;
-}
-
-/* Nội dung chính */
-.main-content {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    padding: 30px;
-    transition: background-color 0.3s ease;
-}
-
-.main-content h1 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.main-content p {
-    color: var(--text-color);
-    font-size: 1.1em;
-}
-
-/* Animation fade-in */
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Progress bars cho skills */
-.progress-bar {
-    transition: width 0.5s ease;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--footer-bg);
     color: #fff;
-    padding: 40px 0;
-    margin-top: 50px;
-    transition: background-color 0.3s ease;
-}
-
-.footer a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.footer .social-icons i {
-    font-size: 1.5em;
-    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
@@ -229,15 +163,7 @@ body {
     color: var(--accent-color);
 }
 
-/* Tùy chỉnh Bootstrap */
-.nav-link {
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--accent-color) !important;
-}
-
+/* Card cho about */
 .card {
     background-color: var(--card-bg);
     transition: background-color 0.3s ease;
@@ -245,6 +171,10 @@ body {
 
 /* Media queries */
 @media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+
     .main-content {
         padding: 20px;
     }
