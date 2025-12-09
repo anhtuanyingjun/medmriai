@@ -1,100 +1,41 @@
-/* Reset cơ bản */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body và Typography */
+/* Reset cơ bản (Bootstrap đã xử lý phần lớn, nhưng giữ cho tùy chỉnh) */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f4f8; /* Màu nền nhẹ, xanh nhạt cho sự tươi mới */
+    background-color: #f0f4f8;
     color: #333;
-    line-height: 1.6;
 }
 
-/* Navbar - Thêm gradient, sticky, và màu sắc */
-.navbar {
-    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient xanh dương chuyên nghiệp */
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow mạnh hơn cho chiều sâu */
-    position: sticky; /* Dính ở trên cùng khi scroll */
-    top: 0;
-    z-index: 1000;
-    transition: background 0.3s ease; /* Hiệu ứng mượt */
-}
-
-.navbar:hover {
-    background: linear-gradient(90deg, #0056b3, #007bff); /* Đổi gradient khi hover toàn navbar */
-}
-
-.navbar .logo {
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 1px; /* Khoảng cách chữ cho chuyên nghiệp */
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-}
-
-.navbar ul li {
-    margin-left: 25px; /* Tăng khoảng cách cho thoáng */
-}
-
-.navbar ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng hover mượt */
-}
-
-.navbar ul li a:hover {
-    background-color: #fd7e14; /* Màu cam accent nổi bật */
-    transform: scale(1.05); /* Phóng to nhẹ khi hover */
-}
-
-/* Nội dung chính - Thêm màu sắc và shadow */
+/* Nội dung chính */
 .main-content {
     max-width: 1200px;
-    margin: 60px auto; /* Tăng margin cho không gian */
+    margin: 60px auto;
     padding: 30px;
     background-color: #fff;
-    border-radius: 12px; /* Bo tròn hơn */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Shadow mạnh hơn */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .main-content h1 {
-    color: #007bff; /* Màu xanh chủ đạo cho tiêu đề */
+    color: #007bff;
     margin-bottom: 20px;
     font-weight: 700;
 }
 
 .main-content p {
-    color: #555; /* Màu xám đậm cho văn bản dễ đọc */
+    color: #555;
     font-size: 1.1em;
 }
 
-/* Footer - Thêm để hoàn thiện, màu sắc hài hòa */
+/* Footer nâng cấp */
 .footer {
-    background-color: #333;
+    background-color: #343a40;
     color: #fff;
-    text-align: center;
-    padding: 15px;
+    padding: 40px 0;
     margin-top: 50px;
-    font-size: 0.9em;
 }
 
 .footer a {
-    color: #fd7e14; /* Màu cam cho liên kết */
+    color: #fd7e14;
     text-decoration: none;
 }
 
@@ -102,24 +43,27 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive cho mobile - Cải thiện màu sắc và layout */
+.footer .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons i:hover {
+    color: #fd7e14;
+}
+
+/* Tùy chỉnh Bootstrap nếu cần */
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fd7e14 !important;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .navbar ul {
-        margin-top: 15px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
     .main-content {
         margin: 20px;
         padding: 20px;
