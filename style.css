@@ -1,4 +1,4 @@
-/* Reset cơ bản (Bootstrap đã xử lý phần lớn, nhưng giữ cho tùy chỉnh) */
+/* Body và Typography */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f0f4f8;
@@ -7,12 +7,10 @@ body {
 
 /* Nội dung chính */
 .main-content {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 30px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
 .main-content h1 {
@@ -53,7 +51,7 @@ body {
     color: #fd7e14;
 }
 
-/* Tùy chỉnh Bootstrap nếu cần */
+/* Tùy chỉnh Bootstrap */
 .nav-link {
     transition: color 0.3s ease;
 }
@@ -62,10 +60,31 @@ body {
     color: #fd7e14 !important;
 }
 
-/* Responsive adjustments */
+/* Media queries cho tối ưu trên thiết bị */
 @media (max-width: 768px) {
     .main-content {
-        margin: 20px;
         padding: 20px;
+    }
+
+    .footer {
+        padding: 20px 0;
+    }
+
+    .social-icons {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8em; /* Giảm kích thước tiêu đề trên mobile */
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .btn {
+        width: 100%; /* Button full-width trên mobile */
     }
 }

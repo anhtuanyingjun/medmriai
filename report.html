@@ -43,28 +43,31 @@
         </div>
     </nav>
 
-    <!-- Nội dung chính -->
-    <div class="main-content">
-        <h1>Báo Lỗi</h1>
-        <p>Nếu bạn gặp lỗi, hãy gửi email đến [email của bạn] hoặc sử dụng form dưới đây (nếu bạn thêm form sau).</p>
-        <!-- Bạn có thể thêm form HTML đơn giản ở đây, ví dụ dùng Bootstrap form -->
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="name" class="form-label">Tên</label>
-                <input type="text" class="form-control" id="name">
+    <!-- Nội dung chính - Sử dụng grid responsive cho form -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 main-content">
+                <h1>Báo Lỗi</h1>
+                <p>Nếu bạn gặp lỗi, hãy gửi email đến [email của bạn] hoặc sử dụng form dưới đây.</p>
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Tên</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="col-12">
+                        <label for="message" class="form-label">Mô tả lỗi</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Gửi</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-6">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email">
-            </div>
-            <div class="col-12">
-                <label for="message" class="form-label">Mô tả lỗi</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Gửi</button>
-            </div>
-        </form>
+        </div>
     </div>
 
     <!-- Footer -->
