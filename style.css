@@ -1,57 +1,269 @@
-/* Body */
+/* CSS Variables cho dễ tùy chỉnh và dark mode */
+:root {
+    --bg-color: #f0f4f8;
+    --text-color: #333;
+    --card-bg: #fff;
+    --primary-color: #007bff;
+    --accent-color: #fd7e14;
+    --footer-bg: #343a40;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #0d6efd;
+    --accent-color: #fd7e14;
+    --footer-bg: #000;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Body và Typography */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
-.header {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Navbar - Giữ nguyên nhưng thêm transition */
+.navbar {
+    transition: background 0.3s ease;
 }
 
-/* Sidebar */
-.sidebar {
-    background-color: #fff;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.sidebar .nav-link {
-    color: #007bff;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.sidebar .nav-link:hover, .sidebar .nav-link.active {
-    color: #fd7e14;
-}
-
-/* Main content */
+/* Nội dung chính */
 .main-content {
-    background-color: #fff;
-    padding: 30px;
+    background-color: var(--card-bg);
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.main-content h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.main-content p {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+/* Animation fade-in */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress bars cho skills */
+.progress-bar {
+    transition: width 0.5s ease;
 }
 
 /* Footer */
 .footer {
-    background-color: #343a40;
+    background-color: var(--footer-bg);
     color: #fff;
     padding: 40px 0;
     margin-top: 50px;
+    transition: background-color 0.3s ease;
 }
 
-/* Responsive: Collapse sidebar on mobile */
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons i:hover {
+    color: var(--accent-color);
+}
+
+/* Tùy chỉnh Bootstrap */
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.card {
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+}
+
+/* Media queries */
 @media (max-width: 768px) {
-    .sidebar {
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 20px;
-    }
     .main-content {
         padding: 20px;
+    }
+
+    .footer {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}/* CSS Variables cho dễ tùy chỉnh và dark mode */
+:root {
+    --bg-color: #f0f4f8;
+    --text-color: #333;
+    --card-bg: #fff;
+    --primary-color: #007bff;
+    --accent-color: #fd7e14;
+    --footer-bg: #343a40;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #0d6efd;
+    --accent-color: #fd7e14;
+    --footer-bg: #000;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Body và Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar - Giữ nguyên nhưng thêm transition */
+.navbar {
+    transition: background 0.3s ease;
+}
+
+/* Nội dung chính */
+.main-content {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.main-content h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.main-content p {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+/* Animation fade-in */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress bars cho skills */
+.progress-bar {
+    transition: width 0.5s ease;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    padding: 40px 0;
+    margin-top: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons i:hover {
+    color: var(--accent-color);
+}
+
+/* Tùy chỉnh Bootstrap */
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.card {
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .btn {
+        width: 100%;
     }
 }
