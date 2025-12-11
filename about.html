@@ -10,72 +10,70 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top shadow-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Trang Web Của Tôi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Trang Chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html"><i class="fas fa-info-circle me-1"></i> Giới Thiệu</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-project-diagram me-1"></i> Dự Án
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item" href="projects.html">Tất Cả Dự Án</a></li>
-                            <li><a class="dropdown-item" href="#">Dự Án 1</a></li>
-                            <li><a class="dropdown-item" href="#">Dự Án 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html"><i class="fas fa-bug me-1"></i> Báo Lỗi</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="theme-toggle" class="btn btn-outline ms-2"><i class="fas fa-moon"></i></button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Nội dung chính -->
-    <div class="container my-5 fade-in">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                <div class="card shadow-lg border-0">
-                    <div class="card-body text-center">
-                        <img src="https://via.placeholder.com/150" alt="Ảnh đại diện" class="rounded-circle mb-3 img-fluid" style="width: 150px; height: 150px;">
-                        <h1 class="card-title">Giới Thiệu Về Tôi</h1>
-                        <p class="card-text">Tôi là [Tên của bạn], một lập trình viên web với hơn [số năm] năm kinh nghiệm. Tôi đam mê phát triển các ứng dụng web hiện đại, tập trung vào UX/UI và hiệu suất.</p>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <h2>Kỹ Năng</h2>
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">HTML/CSS 90%</div>
-                    </div>
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">JavaScript 85%</div>
-                    </div>
-                    <div class="progress mb-3">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Bootstrap 80%</div>
-                    </div>
-                </div>
-                <div class="mt-4">
-                    <h2>Liên Hệ</h2>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-envelope me-2"></i> email@example.com</li>
-                        <li><i class="fas fa-phone me-2"></i> +84 123 456 789</li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Thành phố Hồ Chí Minh, Việt Nam</li>
+    <!-- Sidebar bên trái -->
+    <div class="sidebar">
+        <button id="sidebar-toggle" class="btn btn-primary"><i class="fas fa-bars"></i></button>
+        <div class="sidebar-content">
+            <h3>Menu</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-2"></i> Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="about.html"><i class="fas fa-info-circle me-2"></i> Giới Thiệu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-project-diagram me-2"></i> Dự Án
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                        <li><a class="dropdown-item" href="projects.html">Tất Cả Dự Án</a></li>
+                        <li><a class="dropdown-item" href="#">Dự Án 1</a></li>
+                        <li><a class="dropdown-item" href="#">Dự Án 2</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="report.html"><i class="fas fa-bug me-2"></i> Báo Lỗi</a>
+                </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="btn btn-outline-light"><i class="fas fa-moon"></i> Dark Mode</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Nội dung chính bên phải -->
+    <div class="content">
+        <div class="container my-5 fade-in">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body text-center">
+                            <img src="https://via.placeholder.com/150" alt="Ảnh đại diện" class="rounded-circle mb-3 img-fluid" style="width: 150px; height: 150px;">
+                            <h1 class="card-title">Giới Thiệu Về Tôi</h1>
+                            <p class="card-text">Tôi là [Tên của bạn], một lập trình viên web với hơn [số năm] năm kinh nghiệm. Tôi đam mê phát triển các ứng dụng web hiện đại, tập trung vào UX/UI và hiệu suất.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h2>Kỹ Năng</h2>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">HTML/CSS 90%</div>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">JavaScript 85%</div>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Bootstrap 80%</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h2>Liên Hệ</h2>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-envelope me-2"></i> email@example.com</li>
+                            <li><i class="fas fa-phone me-2"></i> +84 123 456 789</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Thành phố Hồ Chí Minh, Việt Nam</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

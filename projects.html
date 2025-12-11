@@ -10,51 +10,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top shadow-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Trang Web Của Tôi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Trang Chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1"></i> Giới Thiệu</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-project-diagram me-1"></i> Dự Án
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item" href="projects.html">Tất Cả Dự Án</a></li>
-                            <li><a class="dropdown-item" href="#">Dự Án 1</a></li>
-                            <li><a class="dropdown-item" href="#">Dự Án 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="report.html"><i class="fas fa-bug me-1"></i> Báo Lỗi</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="theme-toggle" class="btn btn-outline ms-2"><i class="fas fa-moon"></i></button>
-                    </li>
-                </ul>
-            </div>
+    <!-- Sidebar bên trái -->
+    <div class="sidebar">
+        <button id="sidebar-toggle" class="btn btn-primary"><i class="fas fa-bars"></i></button>
+        <div class="sidebar-content">
+            <h3>Menu</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-2"></i> Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-2"></i> Giới Thiệu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-project-diagram me-2"></i> Dự Án
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                        <li><a class="dropdown-item" href="projects.html">Tất Cả Dự Án</a></li>
+                        <li><a class="dropdown-item" href="#">Dự Án 1</a></li>
+                        <li><a class="dropdown-item" href="#">Dự Án 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="report.html"><i class="fas fa-bug me-2"></i> Báo Lỗi</a>
+                </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="btn btn-outline-light"><i class="fas fa-moon"></i> Dark Mode</button>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
 
-    <!-- Nội dung chính -->
-    <div class="container my-5 fade-in">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8 main-content">
-                <h1>Dự Án</h1>
-                <ul>
-                    <li>Dự án 1: Mô tả ngắn về dự án đầu tiên.</li>
-                    <li>Dự án 2: Mô tả ngắn về dự án thứ hai.</li>
-                </ul>
+    <!-- Nội dung chính bên phải -->
+    <div class="content">
+        <div class="container my-5 fade-in">
+            <div class="row justify-content-center">
+                <div class="col-12 main-content">
+                    <h1>Dự Án</h1>
+                    <ul>
+                        <li>Dự án 1: Mô tả ngắn về dự án đầu tiên.</li>
+                        <li>Dự án 2: Mô tả ngắn về dự án thứ hai.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
