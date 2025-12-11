@@ -1,173 +1,184 @@
-/* CSS Variables cho dark mode */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 :root {
-    --bg-color: #f0f4f8;
-    --text-color: #333;
-    --card-bg: #fff;
-    --primary-color: #007bff;
-    --accent-color: #fd7e14;
-    --footer-bg: #343a40;
-    --navbar-bg: linear-gradient(to bottom, #007bff, #6f42c1); /* Gradient blur chủ đạo */
-    --navbar-text: #fff;
-    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    --input-bg: #fff;
-    --input-text: #333;
-    --btn-outline-border: #fff;
+    --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7c4dff 100%);
+    --accent-color: #ff9f43;
+    --sidebar-width: 260px;
+    --bg-light: #f8f9fa;
+    --text-light: #333;
+    --bg-dark: #121212;
+    --text-dark: #e0e0e0;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e1e1e;
+    --transition-speed: 0.3s;
 }
 
-body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --card-bg: #1e1e1e;
-    --primary-color: #0d6efd;
-    --accent-color: #fd7e14;
-    --footer-bg: #000;
-    --navbar-bg: linear-gradient(to bottom, #1e1e1e, #333);
-    --navbar-text: #e0e0e0;
-    --shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    --input-bg: #333;
-    --input-text: #e0e0e0;
-    --btn-outline-border: #e0e0e0;
-}
-
-/* Layout chính: Sidebar + Content */
+/* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    min-height: 100vh;
-    margin: 0;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-.sidebar {
-    width: 250px;
-    background: var(--navbar-bg);
-    color: var(--navbar-text);
-    padding: 20px;
-    transition: width 0.3s ease;
-    position: fixed;
+/* --- Layout Wrapper --- */
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* --- Sidebar Styles --- */
+#sidebar {
+    min-width: var(--sidebar-width);
+    max-width: var(--sidebar-width);
+    background: var(--primary-gradient);
+    color: #fff;
+    transition: all var(--transition-speed);
+    position: sticky; /* Sticky sidebar */
+    top: 0;
     height: 100vh;
     overflow-y: auto;
-    backdrop-filter: blur(10px); /* Blur effect cho hiện đại */
-    box-shadow: var(--shadow);
     z-index: 1000;
+    backdrop-filter: blur(10px); /* Glassmorphism if elements behind */
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar.closed {
-    width: 60px; /* Thu gọn khi đóng */
+#sidebar.active {
+    margin-left: calc(var(--sidebar-width) * -1);
 }
 
-.sidebar.closed .sidebar-content {
-    display: none;
-}
-
-#sidebar-toggle {
-    display: block;
-    margin-bottom: 20px;
-}
-
-.sidebar .nav-link {
-    color: var(--navbar-text);
-    transition: color 0.3s ease;
-}
-
-.sidebar .nav-link:hover {
-    color: var(--accent-color);
-}
-
-.content {
-    flex: 1;
-    margin-left: 250px;
-    transition: margin-left 0.3s ease;
+#sidebar .sidebar-header {
     padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
 }
 
-.sidebar.closed + .content {
-    margin-left: 60px;
+#sidebar ul.components {
+    padding: 20px 0;
 }
 
-/* Hero Section */
-.hero {
-    background-image: url('https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?semt=ais_hybrid&w=740&q=80');
+#sidebar ul li a {
+    padding: 15px 20px;
+    font-size: 1.1em;
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: 0.3s;
+    border-left: 4px solid transparent;
+}
+
+#sidebar ul li a:hover, #sidebar ul li a.active-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 25px; /* Slight movement on hover */
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Dropdown inside sidebar */
+a[data-bs-toggle="collapse"] {
+    position: relative;
+}
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/* --- Main Content --- */
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile Toggle Button (Visible only on top bar logic via JS/Media query) */
+.navbar-mobile {
+    padding: 15px;
+    background: var(--primary-gradient);
+    color: white;
+    display: none; /* Hidden on desktop */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
-    height: 60vh;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
     color: #fff;
-    position: relative;
-    backdrop-filter: blur(5px); /* Thêm blur nhẹ cho hero */
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+.btn-accent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 159, 67, 0.4);
+    color: white;
 }
 
-.hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-body.dark-mode .hero {
-    filter: brightness(0.8);
-}
-
-/* Các phần khác giữ nguyên, chỉ điều chỉnh để phù hợp layout */
-.main-content {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    padding: 30px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.footer {
-    background-color: var(--footer-bg);
-    color: #fff;
-    padding: 40px 0;
-    margin-top: auto; /* Đẩy footer xuống dưới */
-    width: 100%;
-}
-
-/* Responsive: Ẩn sidebar default trên mobile */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 0;
-        padding: 0;
-    }
-
-    .sidebar.active {
-        width: 250px;
-        padding: 20px;
-    }
-
-    .content {
-        margin-left: 0;
-    }
-
-    .sidebar.active + .content {
-        margin-left: 250px;
-    }
-
-    #sidebar-toggle {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 1001;
-    }
-}
-
-/* Animation fade-in */
+/* --- Animations --- */
 .fade-in {
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Dark Mode Overrides --- */
+[data-theme="dark"] body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--card-bg-dark);
+    border-color: #333;
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .form-control {
+    background-color: #2c2c2c;
+    border-color: #444;
+    color: white;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: calc(var(--sidebar-width) * -1); /* Hide by default on mobile */
+    }
+    #sidebar.active {
+        margin-left: 0; /* Show when active on mobile */
+    }
+    .navbar-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
