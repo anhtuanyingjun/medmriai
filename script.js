@@ -1,52 +1,63 @@
-// script.js
-// Dark Mode Toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    // Kiểm tra trạng thái dark mode từ localStorage
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-        toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarCollapse = document.getElementById('sidebarCollapse');
+    const overlay = document.getElementById('overlay');
+    const themeToggle = document.getElementById('themeToggle');
+    
+    // Toggle Mobile Sidebar
+    if (sidebarCollapse) {
+        sidebarCollapse.addEventListener('click', function () {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+    }
+    if (overlay) {
+        overlay.addEventListener('click', function () {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
     }
 
-    toggleButton.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-            toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-            toggleButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
-        }
-    });
-
-    // Sidebar Toggle - Sửa để dùng 'active' và 'closed'
-    const sidebar = document.querySelector('.sidebar');
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const content = document.querySelector('.content');
-
-    sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        sidebar.classList.toggle('closed');
-        if (window.innerWidth <= 768) {
-            if (sidebar.classList.contains('active')) {
-                content.style.opacity = '0.5';
-                content.style.pointerEvents = 'none';
-            } else {
-                content.style.opacity = '1';
-                content.style.pointerEvents = 'auto';
+    // Active Link Logic
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('#sidebar ul li a');
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+            link.classList.add('active-link');
+            const parentCollapse = link.closest('.collapse');
+            if(parentCollapse){
+                parentCollapse.classList.add('show');
+                const dropdownTrigger = document.querySelector(`[data-bs-target="#${parentCollapse.id}"]`);
+                if(dropdownTrigger) dropdownTrigger.classList.add('active-link');
             }
         }
     });
 
-    // Smooth scroll cho links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // Dark Mode Logic
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
         });
-    });
+    }
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-bs-theme', theme);
+        localStorage.setItem('theme', theme);
+        const icon = themeToggle.querySelector('i');
+        const text = themeToggle.querySelector('span');
+        if (theme === 'dark') {
+            icon.className = 'fa-solid fa-sun';
+            text.textContent = ' Chế độ sáng';
+        } else {
+            icon.className = 'fa-solid fa-moon';
+            text.textContent = ' Chế độ tối';
+        }
+    }
 });

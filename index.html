@@ -1,84 +1,106 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - Trang Web Của Tôi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Trang Chủ - MyPortfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sidebar bên trái -->
-    <div class="sidebar closed">
-        <button id="sidebar-toggle" class="btn btn-primary"><i class="fas fa-bars"></i></button>
-        <div class="sidebar-content">
-            <h3>Menu</h3>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html"><i class="fas fa-home me-2"></i> Trang Chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-2"></i> Giới Thiệu</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-project-diagram me-2"></i> Dự Án
+
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3 class="fs-4"><i class="fa-solid fa-code"></i> MyPortfolio</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i> Giới Thiệu</a></li>
+                <li>
+                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle d-flex align-items-center justify-content-between">
+                        <span><i class="fa-solid fa-folder-open"></i> Dự Án</span>
+                        <i class="fa-solid fa-chevron-down" style="font-size: 0.8em;"></i>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                        <li><a class="dropdown-item" href="projects.html">Tất Cả Dự Án</a></li>
-                        <li><a class="dropdown-item" href="#">Dự Án 1</a></li>
-                        <li><a class="dropdown-item" href="#">Dự Án 2</a></li>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a href="projects.html" class="ps-5">Tất cả dự án</a></li>
+                        <li><a href="#" class="ps-5">Web Design</a></li>
+                        <li><a href="#" class="ps-5">App Development</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="report.html"><i class="fas fa-bug me-2"></i> Báo Lỗi</a>
-                </li>
-                <li class="nav-item">
-                    <button id="theme-toggle" class="btn btn-outline-light"><i class="fas fa-moon"></i> Dark Mode</button>
+                <li><a href="report.html"><i class="fa-solid fa-bug"></i> Báo Lỗi</a></li>
+            </ul>
+
+            <ul class="list-unstyled px-3 mb-4">
+                <li>
+                    <a href="#" id="themeToggle" class="btn btn-outline-light w-100">
+                        <i class="fa-solid fa-moon"></i> <span>Chế độ tối</span>
+                    </a>
                 </li>
             </ul>
-        </div>
-    </div>
+        </nav>
 
-    <!-- Nội dung chính bên phải -->
-    <div class="content">
-        <!-- Hero Section -->
-        <section class="hero d-flex align-items-center text-center fade-in">
-            <div class="container">
-                <h1 class="display-4 fw-bold">Chào Mừng Đến Với Trang Web Của Tôi</h1>
-                <p class="lead">Khám phá các dự án sáng tạo và công nghệ hiện đại. Bắt đầu hành trình ngay hôm nay!</p>
-                <a href="about.html" class="btn btn-primary btn-lg">Tìm Hiểu Thêm</a>
-            </div>
-        </section>
+        <div id="content">
+            <nav class="navbar-mobile shadow-sm">
+                <button type="button" id="sidebarCollapse" class="btn btn-light btn-sm">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <span class="fw-bold">Trang Chủ</span>
+                <div style="width: 30px;"></div> </nav>
 
-        <!-- Nội dung thêm -->
-        <div class="container my-5 fade-in">
-            <div class="row justify-content-center">
-                <div class="col-12 main-content">
-                    <h2>Giới Thiệu Ngắn Gọn</h2>
-                    <p>Đây là trang web cá nhân nơi tôi chia sẻ kinh nghiệm và dự án. Được xây dựng với công nghệ hiện đại và deploy trên GitHub Pages.</p>
+            <div class="container-fluid p-0">
+                <section class="hero-section d-flex align-items-center justify-content-center flex-column fade-in">
+                    <h1 class="display-4 fw-bold text-center">Sáng Tạo Không Giới Hạn</h1>
+                    <p class="lead mb-4 text-center">Xây dựng giải pháp công nghệ hiện đại và trải nghiệm người dùng tối ưu.</p>
+                    <a href="about.html" class="btn btn-accent btn-lg shadow">Khám Phá Ngay <i class="fa-solid fa-arrow-right"></i></a>
+                </section>
+
+                <div class="container py-5 fade-in">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3 text-primary"><i class="fa-solid fa-laptop-code fa-3x"></i></div>
+                                    <h5 class="card-title">Frontend Dev</h5>
+                                    <p class="card-text text-body-secondary">HTML5, CSS3, JS, ReactJS với giao diện Responsive.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3 text-success"><i class="fa-solid fa-server fa-3x"></i></div>
+                                    <h5 class="card-title">Backend Ready</h5>
+                                    <p class="card-text text-body-secondary">Tích hợp API và quản lý dữ liệu hiệu quả.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3 text-danger"><i class="fa-solid fa-wand-magic-sparkles fa-3x"></i></div>
+                                    <h5 class="card-title">UI/UX Design</h5>
+                                    <p class="card-text text-body-secondary">Thiết kế hiện đại, tập trung vào trải nghiệm người dùng.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <footer class="bg-body-tertiary text-center py-4 mt-5">
+                    <div class="container">
+                        <p class="mb-0 text-body-secondary">&copy; 2023 MyPortfolio. Built with Bootstrap 5.</p>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2025 Trang Web Của Tôi. Tất cả quyền được bảo lưu.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <p><a href="report.html">Liên Hệ</a> | <a href="about.html">Về Chúng Tôi</a></p>
-        </div>
-    </footer>
+    <div id="overlay" class="overlay"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
