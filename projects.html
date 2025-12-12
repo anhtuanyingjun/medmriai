@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* CSS riêng cho trang Project để tạo hiệu ứng đẹp hơn */
         .nav-pills .nav-link {
             color: var(--text-light);
             background-color: rgba(0,0,0,0.05);
@@ -27,8 +26,6 @@
             color: white;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        
-        /* Hiệu ứng card công cụ */
         .tool-card {
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
@@ -49,17 +46,8 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-
-        /* Publication Item */
-        .pub-item {
-            transition: all 0.3s ease;
-        }
-        .pub-item:hover {
-            background-color: rgba(0,0,0,0.02);
-        }
-        [data-bs-theme="dark"] .pub-item:hover {
-            background-color: rgba(255,255,255,0.05);
-        }
+        .pub-item:hover { background-color: rgba(0,0,0,0.02); }
+        [data-bs-theme="dark"] .pub-item:hover { background-color: rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
@@ -80,7 +68,8 @@
                         <div class="d-flex align-items-center"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></div>
                     </a>
                     <ul class="collapse show list-unstyled" id="pageSubmenu">
-                        <li><a href="projects.html" class="ps-4 active-link"><i class="fa-solid fa-caret-right fs-6"></i> <span>Tất cả</span></a></li>
+                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Web Design</span></a></li>
+                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>App Dev</span></a></li>
                     </ul>
                 </li>
                 <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
@@ -119,17 +108,19 @@
 
                 <div class="tab-content" id="pills-tabContent">
                     
-                    <div class="tab-pane fade show active" id="pills-toolbox" role="tabpanel" aria-labelledby="pills-toolbox-tab" tabindex="0">
+                    <div class="tab-pane fade show active" id="pills-toolbox" role="tabpanel" tabindex="0">
                         <div class="row g-4">
                             <div class="col-md-4">
                                 <div class="card h-100 border-0 shadow-sm tool-card rounded-4">
                                     <div class="card-body p-4">
                                         <div class="tool-icon bg-primary bg-opacity-10 text-primary">
-                                            <i class="fa-solid fa-chart-nodes"></i>
+                                            <i class="fa-solid fa-circle-nodes"></i>
                                         </div>
                                         <h5 class="card-title fw-bold">Cluster Data Visualizer</h5>
-                                        <p class="card-text text-body-secondary small">Công cụ trực quan hóa dữ liệu phân cụm, hỗ trợ phân tích các mẫu phức tạp trong tập dữ liệu lớn bằng biểu đồ tương tác.</p>
-                                        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill mt-2">Khởi chạy <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                        <p class="card-text text-body-secondary small">Công cụ trực quan hóa dữ liệu phân cụm trên nền tảng Google Apps Script.</p>
+                                        <button type="button" class="btn btn-outline-primary btn-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#clusterToolModal">
+                                            Khởi chạy <i class="fa-solid fa-play ms-1"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +132,7 @@
                                             <i class="fa-solid fa-file-medical"></i>
                                         </div>
                                         <h5 class="card-title fw-bold">Convert Data DICOM</h5>
-                                        <p class="card-text text-body-secondary small">Chuyển đổi và xử lý định dạng ảnh y tế DICOM sang NIfTI/JPG, hỗ trợ trích xuất metadata và ẩn danh thông tin bệnh nhân.</p>
+                                        <p class="card-text text-body-secondary small">Chuyển đổi ảnh y tế DICOM sang NIfTI/JPG, ẩn danh thông tin bệnh nhân.</p>
                                         <a href="#" class="btn btn-outline-success btn-sm rounded-pill mt-2">Khởi chạy <i class="fa-solid fa-arrow-right ms-1"></i></a>
                                     </div>
                                 </div>
@@ -153,8 +144,8 @@
                                         <div class="tool-icon bg-warning bg-opacity-10 text-warning">
                                             <i class="fa-solid fa-wand-magic-sparkles"></i>
                                         </div>
-                                        <h5 class="card-title fw-bold">Harmonization for VBM data</h5>
-                                        <p class="card-text text-body-secondary small">Chuẩn hóa dữ liệu đa trung tâm cho phân tích VBM (Voxel-based Morphometry), giảm thiểu hiệu ứng bias giữa các máy quét MRI.</p>
+                                        <h5 class="card-title fw-bold">Harmonization for VBM</h5>
+                                        <p class="card-text text-body-secondary small">Chuẩn hóa dữ liệu đa trung tâm cho phân tích VBM.</p>
                                         <a href="#" class="btn btn-outline-warning btn-sm rounded-pill mt-2">Khởi chạy <i class="fa-solid fa-arrow-right ms-1"></i></a>
                                     </div>
                                 </div>
@@ -162,8 +153,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="pills-publications" role="tabpanel" aria-labelledby="pills-publications-tab" tabindex="0">
-                        
+                    <div class="tab-pane fade" id="pills-publications" role="tabpanel" tabindex="0">
                         <div class="card border-0 shadow-sm mb-4 rounded-4 bg-body-tertiary">
                             <div class="card-body p-3">
                                 <div class="row g-3">
@@ -186,65 +176,51 @@
                         </div>
 
                         <div class="list-group shadow-sm rounded-4" id="publicationsList">
-                            
                             <div class="list-group-item p-4 border-0 mb-1 pub-item" data-year="2023">
                                 <div class="d-flex w-100 justify-content-between align-items-start">
-                                    <h5 class="mb-1 fw-bold text-primary pub-title">Advanced Brain MRI Segmentation using Deep Learning</h5>
+                                    <h5 class="mb-1 fw-bold text-primary pub-title">Advanced Brain MRI Segmentation</h5>
                                     <span class="badge bg-primary rounded-pill">2023</span>
                                 </div>
-                                <p class="mb-2 text-body-secondary mt-2">Nghiên cứu áp dụng mạng nơ-ron tích chập (CNN) để phân đoạn khối u não với độ chính xác cao trên tập dữ liệu BraTS.</p>
+                                <p class="mb-2 text-body-secondary mt-2">Nghiên cứu áp dụng mạng nơ-ron tích chập (CNN) để phân đoạn khối u não.</p>
                                 <div class="d-flex gap-3 text-muted small mt-3">
-                                    <span><i class="fa-solid fa-users me-1"></i> Nguyen V.A, Tran B.C</span>
+                                    <span><i class="fa-solid fa-users me-1"></i> Nguyen V.A</span>
                                     <span><i class="fa-solid fa-book me-1"></i> IEEE Access</span>
-                                    <a href="#" class="text-decoration-none"><i class="fa-solid fa-link"></i> DOI: 10.1109/ACCESS.2023</a>
                                 </div>
                             </div>
-
                             <div class="list-group-item p-4 border-0 mb-1 pub-item" data-year="2022">
                                 <div class="d-flex w-100 justify-content-between align-items-start">
-                                    <h5 class="mb-1 fw-bold text-primary pub-title">Harmonization Techniques for Multi-site Neuroimaging Data</h5>
+                                    <h5 class="mb-1 fw-bold text-primary pub-title">VBM Harmonization Study</h5>
                                     <span class="badge bg-secondary rounded-pill">2022</span>
                                 </div>
-                                <p class="mb-2 text-body-secondary mt-2">Đánh giá hiệu quả của ComBat và Deep Learning trong việc loại bỏ biến thiên giữa các máy quét trong phân tích VBM.</p>
-                                <div class="d-flex gap-3 text-muted small mt-3">
-                                    <span><i class="fa-solid fa-users me-1"></i> Le T.H, Nguyen V.A</span>
-                                    <span><i class="fa-solid fa-book me-1"></i> NeuroImage</span>
-                                    <a href="#" class="text-decoration-none"><i class="fa-solid fa-link"></i> DOI: 10.1016/j.neuroimage.2022</a>
-                                </div>
+                                <p class="mb-2 text-body-secondary mt-2">Nghiên cứu về chuẩn hóa dữ liệu đa trung tâm.</p>
                             </div>
-
-                            <div class="list-group-item p-4 border-0 mb-1 pub-item" data-year="2021">
-                                <div class="d-flex w-100 justify-content-between align-items-start">
-                                    <h5 class="mb-1 fw-bold text-primary pub-title">Automated DICOM Anonymization Tool for Research</h5>
-                                    <span class="badge bg-secondary rounded-pill">2021</span>
-                                </div>
-                                <p class="mb-2 text-body-secondary mt-2">Phát triển công cụ mã nguồn mở giúp ẩn danh dữ liệu y tế tuân thủ tiêu chuẩn HIPAA phục vụ chia sẻ dữ liệu nghiên cứu.</p>
-                                <div class="d-flex gap-3 text-muted small mt-3">
-                                    <span><i class="fa-solid fa-users me-1"></i> Team Lab X</span>
-                                    <span><i class="fa-solid fa-book me-1"></i> Journal of Digital Imaging</span>
-                                    <a href="#" class="text-decoration-none"><i class="fa-solid fa-link"></i> DOI: 10.1007/s10278-021</a>
-                                </div>
-                            </div>
-
-                             <div class="list-group-item p-4 border-0 mb-1 pub-item" data-year="2023">
-                                <div class="d-flex w-100 justify-content-between align-items-start">
-                                    <h5 class="mb-1 fw-bold text-primary pub-title">Cluster Analysis in Genomics</h5>
-                                    <span class="badge bg-primary rounded-pill">2023</span>
-                                </div>
-                                <p class="mb-2 text-body-secondary mt-2">Ứng dụng thuật toán phân cụm không giám sát để phát hiện các nhóm gen biểu hiện khác biệt.</p>
-                                <div class="d-flex gap-3 text-muted small mt-3">
-                                    <span><i class="fa-solid fa-users me-1"></i> Pham D.K</span>
-                                    <span><i class="fa-solid fa-book me-1"></i> Bioinformatics</span>
-                                </div>
-                            </div>
-
                         </div>
                         <div id="noResults" class="text-center py-5 d-none">
-                            <i class="fa-solid fa-magnifying-glass text-muted fa-3x mb-3"></i>
                             <p class="text-muted">Không tìm thấy kết quả phù hợp.</p>
                         </div>
-
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="clusterToolModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header border-0 shadow-sm" style="background-color: var(--bg-light); color: var(--text-light);">
+                    <h5 class="modal-title fw-bold">
+                        <i class="fa-solid fa-circle-nodes me-2 text-primary"></i>Cluster Data Visualizer
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0" style="background: #fff;">
+                    <iframe 
+                        src="https://script.google.com/macros/s/AKfycbzJ7bNFqX_T6v7mkv7BC9c2WpRwDI7AOUeCYDbtfvuQdnPoIPG3fEWlQwtm0CbxW7W2zw/exec" 
+                        class="tool-frame" 
+                        title="Cluster Tool"
+                        style="width: 100%; height: 100%; border: none;"
+                        allow="fullscreen">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -269,8 +245,6 @@
                 pubItems.forEach(item => {
                     const title = item.querySelector('.pub-title').textContent.toLowerCase();
                     const year = item.getAttribute('data-year');
-                    
-                    // Logic lọc: (Tên khớp HOẶC trống) VÀ (Năm khớp HOẶC chọn All)
                     const matchesSearch = title.includes(searchTerm);
                     const matchesYear = selectedYear === 'all' || year === selectedYear;
 
@@ -281,16 +255,9 @@
                         item.classList.add('d-none');
                     }
                 });
-
-                // Hiển thị thông báo nếu không có kết quả
-                if (visibleCount === 0) {
-                    noResults.classList.remove('d-none');
-                } else {
-                    noResults.classList.add('d-none');
-                }
+                if (visibleCount === 0) noResults.classList.remove('d-none');
+                else noResults.classList.add('d-none');
             }
-
-            // Gán sự kiện
             searchInput.addEventListener('input', filterPublications);
             yearFilter.addEventListener('change', filterPublications);
         });
