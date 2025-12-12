@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - Portfolio</title>
+    <title>Trang Chủ - MyPortfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -13,32 +13,27 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><i class="fa-solid fa-code"></i> MyPortfolio</h3>
+                <h3 class="fs-4"><i class="fa-solid fa-code"></i> MyPortfolio</h3>
             </div>
 
             <ul class="list-unstyled components">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i> Giới Thiệu</a></li>
                 <li>
-                    <a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a>
-                </li>
-                <li>
-                    <a href="about.html"><i class="fa-solid fa-user"></i> Giới Thiệu</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fa-solid fa-folder-open"></i> Dự Án
+                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle d-flex align-items-center justify-content-between">
+                        <span><i class="fa-solid fa-folder-open"></i> Dự Án</span>
+                        <i class="fa-solid fa-chevron-down" style="font-size: 0.8em;"></i>
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li><a href="projects.html" class="ps-5">Tất cả dự án</a></li>
                         <li><a href="#" class="ps-5">Web Design</a></li>
-                        <li><a href="#" class="ps-5">Mobile App</a></li>
+                        <li><a href="#" class="ps-5">App Development</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="report.html"><i class="fa-solid fa-bug"></i> Báo Lỗi</a>
-                </li>
+                <li><a href="report.html"><i class="fa-solid fa-bug"></i> Báo Lỗi</a></li>
             </ul>
 
-            <ul class="list-unstyled CTAs px-3">
+            <ul class="list-unstyled px-3 mb-4">
                 <li>
                     <a href="#" id="themeToggle" class="btn btn-outline-light w-100">
                         <i class="fa-solid fa-moon"></i> <span>Chế độ tối</span>
@@ -53,60 +48,57 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <span class="fw-bold">Trang Chủ</span>
-            </nav>
+                <div style="width: 30px;"></div> </nav>
 
             <div class="container-fluid p-0">
                 <section class="hero-section d-flex align-items-center justify-content-center flex-column fade-in">
-                    <h1 class="display-3 fw-bold">Chào mừng đến với không gian sáng tạo</h1>
-                    <p class="lead mb-4">Giải pháp công nghệ hiện đại, thiết kế tinh tế và trải nghiệm mượt mà.</p>
-                    <a href="about.html" class="btn btn-accent btn-lg">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></a>
+                    <h1 class="display-4 fw-bold text-center">Sáng Tạo Không Giới Hạn</h1>
+                    <p class="lead mb-4 text-center">Xây dựng giải pháp công nghệ hiện đại và trải nghiệm người dùng tối ưu.</p>
+                    <a href="about.html" class="btn btn-accent btn-lg shadow">Khám Phá Ngay <i class="fa-solid fa-arrow-right"></i></a>
                 </section>
 
                 <div class="container py-5 fade-in">
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
+                    <div class="row g-4">
+                        <div class="col-md-4">
                             <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body text-center">
-                                    <i class="fa-solid fa-laptop-code fa-3x text-primary mb-3"></i>
-                                    <h5 class="card-title">Thiết Kế Web</h5>
-                                    <p class="card-text">Giao diện hiện đại, tối ưu hóa trải nghiệm người dùng (UI/UX).</p>
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3 text-primary"><i class="fa-solid fa-laptop-code fa-3x"></i></div>
+                                    <h5 class="card-title">Frontend Dev</h5>
+                                    <p class="card-text text-body-secondary">HTML5, CSS3, JS, ReactJS với giao diện Responsive.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4">
                             <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body text-center">
-                                    <i class="fa-solid fa-mobile-screen fa-3x text-success mb-3"></i>
-                                    <h5 class="card-title">Responsive</h5>
-                                    <p class="card-text">Tương thích hoàn hảo trên mọi thiết bị di động và máy tính bảng.</p>
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3 text-success"><i class="fa-solid fa-server fa-3x"></i></div>
+                                    <h5 class="card-title">Backend Ready</h5>
+                                    <p class="card-text text-body-secondary">Tích hợp API và quản lý dữ liệu hiệu quả.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4">
                             <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body text-center">
-                                    <i class="fa-solid fa-rocket fa-3x text-danger mb-3"></i>
-                                    <h5 class="card-title">Hiệu Suất</h5>
-                                    <p class="card-text">Tối ưu hóa tốc độ tải trang và hiệu năng xử lý.</p>
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3 text-danger"><i class="fa-solid fa-wand-magic-sparkles fa-3x"></i></div>
+                                    <h5 class="card-title">UI/UX Design</h5>
+                                    <p class="card-text text-body-secondary">Thiết kế hiện đại, tập trung vào trải nghiệm người dùng.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <footer class="bg-dark text-white text-center py-4 mt-auto">
+                <footer class="bg-body-tertiary text-center py-4 mt-5">
                     <div class="container">
-                        <p class="mb-0">&copy; 2023 MyPortfolio. All rights reserved.</p>
-                        <div class="mt-2">
-                            <a href="#" class="text-white me-2"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="text-white me-2"><i class="fa-brands fa-github"></i></a>
-                            <a href="#" class="text-white"><i class="fa-brands fa-linkedin"></i></a>
-                        </div>
+                        <p class="mb-0 text-body-secondary">&copy; 2023 MyPortfolio. Built with Bootstrap 5.</p>
                     </div>
                 </footer>
             </div>
         </div>
     </div>
+
+    <div id="overlay" class="overlay"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
