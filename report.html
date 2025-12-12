@@ -13,27 +13,28 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3 class="fs-4"><i class="fa-solid fa-code"></i> MyPortfolio</h3>
+                <h3 class="fs-5 m-0 fw-bold">MyPortfolio</h3>
+                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
             <ul class="list-unstyled components">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
-                <li><a href="about.html"><i class="fa-solid fa-user"></i> Giới Thiệu</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Trang Chủ</span></a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
                 <li>
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle d-flex align-items-center justify-content-between">
-                        <span><i class="fa-solid fa-folder-open"></i> Dự Án</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size: 0.8em;"></i>
+                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle align-items-center justify-content-between">
+                        <div class="d-flex align-items-center"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></div>
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li><a href="projects.html" class="ps-5">Tất cả dự án</a></li>
-                        <li><a href="#" class="ps-5">Web Design</a></li>
-                        <li><a href="#" class="ps-5">App Development</a></li>
+                        <li><a href="projects.html" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Tất cả</span></a></li>
+                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Web Design</span></a></li>
                     </ul>
                 </li>
-                <li><a href="report.html"><i class="fa-solid fa-bug"></i> Báo Lỗi</a></li>
+                <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
             </ul>
-            <ul class="list-unstyled px-3 mb-4">
-                <li><a href="#" id="themeToggle" class="btn btn-outline-light w-100"><i class="fa-solid fa-moon"></i> <span>Chế độ tối</span></a></li>
-            </ul>
+            <div class="theme-btn-container">
+                <button id="themeToggle" title="Chế độ tối"><i class="fa-solid fa-moon"></i></button>
+            </div>
         </nav>
 
         <div id="content">
@@ -51,7 +52,7 @@
                                 <h5 class="mb-0"><i class="fa-solid fa-triangle-exclamation me-2"></i>Báo Cáo Sự Cố</h5>
                             </div>
                             <div class="card-body p-4">
-                                <p class="card-text text-body-secondary mb-4">Chúng tôi rất tiếc nếu bạn gặp phải sự cố. Vui lòng điền thông tin chi tiết để chúng tôi có thể khắc phục sớm nhất.</p>
+                                <p class="card-text text-body-secondary mb-4">Chúng tôi rất tiếc nếu bạn gặp phải sự cố. Vui lòng điền thông tin chi tiết.</p>
                                 <form>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
@@ -69,12 +70,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                     <div class="mb-4">
                                         <label for="description" class="form-label fw-bold">Mô tả chi tiết lỗi</label>
                                         <textarea class="form-control" id="description" rows="5" placeholder="Vui lòng mô tả các bước để tái hiện lỗi..."></textarea>
                                     </div>
-                                    
                                     <div class="d-grid">
                                         <button type="submit" class="btn btn-primary btn-lg"><i class="fa-solid fa-paper-plane me-2"></i>Gửi Báo Cáo</button>
                                     </div>

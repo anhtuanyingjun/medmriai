@@ -13,27 +13,28 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3 class="fs-4"><i class="fa-solid fa-code"></i> MyPortfolio</h3>
+                <h3 class="fs-5 m-0 fw-bold">MyPortfolio</h3>
+                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
             <ul class="list-unstyled components">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
-                <li><a href="about.html"><i class="fa-solid fa-user"></i> Giới Thiệu</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Trang Chủ</span></a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
                 <li>
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle d-flex align-items-center justify-content-between">
-                        <span><i class="fa-solid fa-folder-open"></i> Dự Án</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size: 0.8em;"></i>
+                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle align-items-center justify-content-between">
+                        <div class="d-flex align-items-center"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></div>
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li><a href="projects.html" class="ps-5">Tất cả dự án</a></li>
-                        <li><a href="#" class="ps-5">Web Design</a></li>
-                        <li><a href="#" class="ps-5">App Development</a></li>
+                        <li><a href="projects.html" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Tất cả</span></a></li>
+                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Web Design</span></a></li>
                     </ul>
                 </li>
-                <li><a href="report.html"><i class="fa-solid fa-bug"></i> Báo Lỗi</a></li>
+                <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
             </ul>
-            <ul class="list-unstyled px-3 mb-4">
-                <li><a href="#" id="themeToggle" class="btn btn-outline-light w-100"><i class="fa-solid fa-moon"></i> <span>Chế độ tối</span></a></li>
-            </ul>
+            <div class="theme-btn-container">
+                <button id="themeToggle" title="Chế độ tối"><i class="fa-solid fa-moon"></i></button>
+            </div>
         </nav>
 
         <div id="content">
@@ -55,7 +56,7 @@
                             <h5 class="mb-1 fw-bold text-primary"><i class="fa-solid fa-cart-shopping me-2"></i>E-commerce Website</h5>
                             <span class="badge bg-success rounded-pill">Hoàn thành</span>
                         </div>
-                        <p class="mb-2 text-body-secondary mt-2">Nền tảng thương mại điện tử với tính năng giỏ hàng, thanh toán online và quản lý đơn hàng.</p>
+                        <p class="mb-2 text-body-secondary mt-2">Nền tảng thương mại điện tử với tính năng giỏ hàng, thanh toán online.</p>
                         <small class="text-muted"><i class="fa-solid fa-code"></i> HTML, CSS, JS, Bootstrap</small>
                     </a>
 
@@ -64,7 +65,7 @@
                             <h5 class="mb-1 fw-bold text-primary"><i class="fa-solid fa-id-card me-2"></i>Personal Portfolio</h5>
                             <span class="badge bg-success rounded-pill">Đang chạy</span>
                         </div>
-                        <p class="mb-2 text-body-secondary mt-2">Website giới thiệu cá nhân với giao diện Sidebar hiện đại và chế độ Dark Mode.</p>
+                        <p class="mb-2 text-body-secondary mt-2">Website giới thiệu cá nhân với giao diện Sidebar hiện đại và Dark Mode.</p>
                         <small class="text-muted"><i class="fa-solid fa-code"></i> Bootstrap 5, Glassmorphism</small>
                     </a>
 
@@ -73,16 +74,8 @@
                             <h5 class="mb-1 fw-bold text-primary"><i class="fa-solid fa-list-check me-2"></i>Task Manager App</h5>
                             <span class="badge bg-warning text-dark rounded-pill">Đang phát triển</span>
                         </div>
-                        <p class="mb-2 text-body-secondary mt-2">Ứng dụng quản lý công việc Todo List, hỗ trợ kéo thả và nhắc nhở.</p>
+                        <p class="mb-2 text-body-secondary mt-2">Ứng dụng quản lý công việc Todo List, hỗ trợ kéo thả.</p>
                         <small class="text-muted"><i class="fa-solid fa-code"></i> ReactJS, Firebase</small>
-                    </a>
-                     <a href="#" class="list-group-item list-group-item-action p-4 border-0 mb-1 rounded">
-                        <div class="d-flex w-100 justify-content-between align-items-center">
-                            <h5 class="mb-1 fw-bold text-secondary"><i class="fa-solid fa-blog me-2"></i>Blog CMS</h5>
-                            <span class="badge bg-secondary rounded-pill">Tạm dừng</span>
-                        </div>
-                        <p class="mb-2 text-body-secondary mt-2">Hệ thống quản lý nội dung cho blog cá nhân.</p>
-                        <small class="text-muted"><i class="fa-solid fa-code"></i> PHP, MySQL</small>
                     </a>
                 </div>
             </div>

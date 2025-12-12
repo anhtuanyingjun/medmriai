@@ -13,27 +13,28 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3 class="fs-4"><i class="fa-solid fa-code"></i> MyPortfolio</h3>
+                <h3 class="fs-5 m-0 fw-bold">MyPortfolio</h3>
+                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
             <ul class="list-unstyled components">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
-                <li><a href="about.html"><i class="fa-solid fa-user"></i> Giới Thiệu</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Trang Chủ</span></a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
                 <li>
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle d-flex align-items-center justify-content-between">
-                        <span><i class="fa-solid fa-folder-open"></i> Dự Án</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size: 0.8em;"></i>
+                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle align-items-center justify-content-between">
+                        <div class="d-flex align-items-center"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></div>
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li><a href="projects.html" class="ps-5">Tất cả dự án</a></li>
-                        <li><a href="#" class="ps-5">Web Design</a></li>
-                        <li><a href="#" class="ps-5">App Development</a></li>
+                        <li><a href="projects.html" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Tất cả</span></a></li>
+                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Web Design</span></a></li>
                     </ul>
                 </li>
-                <li><a href="report.html"><i class="fa-solid fa-bug"></i> Báo Lỗi</a></li>
+                <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
             </ul>
-            <ul class="list-unstyled px-3 mb-4">
-                <li><a href="#" id="themeToggle" class="btn btn-outline-light w-100"><i class="fa-solid fa-moon"></i> <span>Chế độ tối</span></a></li>
-            </ul>
+            <div class="theme-btn-container">
+                <button id="themeToggle" title="Chế độ tối"><i class="fa-solid fa-moon"></i></button>
+            </div>
         </nav>
 
         <div id="content">
@@ -44,56 +45,64 @@
             </nav>
 
             <div class="container py-5 fade-in">
-                <div class="row align-items-center mb-5">
-                    <div class="col-md-4 text-center mb-4 mb-md-0">
-                        <div class="ratio ratio-1x1 mx-auto" style="max-width: 300px;">
-                            <img src="https://via.placeholder.com/300x300?text=Avatar" alt="Profile" class="rounded-circle shadow object-fit-cover border border-4 border-white">
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <h2 class="fw-bold mb-3">Xin chào, tôi là Web Developer</h2>
-                        <p class="lead">Đam mê công nghệ và sáng tạo ra những sản phẩm kỹ thuật số chất lượng cao.</p>
-                        <p class="text-body-secondary">Tôi có kinh nghiệm trong việc xây dựng các trang web responsive, tối ưu hóa trải nghiệm người dùng và giải quyết các vấn đề kỹ thuật phức tạp. Tôi luôn sẵn sàng học hỏi những công nghệ mới để nâng cao chất lượng sản phẩm.</p>
-                        
-                        <div class="row mt-4">
-                            <div class="col-sm-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary text-white rounded-circle p-2 me-3"><i class="fa-solid fa-envelope"></i></div>
-                                    <div>
-                                        <small class="text-muted d-block">Email</small>
-                                        <strong>contact@email.com</strong>
-                                    </div>
+                <div class="row g-5">
+                    <div class="col-lg-4 text-center text-lg-start">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4 d-flex flex-column align-items-center">
+                                <div class="profile-img-container mb-4">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                                         alt="Profile Avatar" class="profile-img">
                                 </div>
-                            </div>
-                            <div class="col-sm-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-success text-white rounded-circle p-2 me-3"><i class="fa-solid fa-location-dot"></i></div>
-                                    <div>
-                                        <small class="text-muted d-block">Địa điểm</small>
-                                        <strong>TP. Hồ Chí Minh</strong>
-                                    </div>
+                                <h3 class="fw-bold">Nguyễn Văn Dev</h3>
+                                <p class="text-primary fw-medium">Fullstack Developer</p>
+                                
+                                <div class="d-flex gap-2 mt-2">
+                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="fa-brands fa-facebook-f"></i></a>
                                 </div>
+                                <hr class="w-100 my-4">
+                                <div class="w-100 text-start">
+                                    <div class="mb-3"><i class="fa-solid fa-envelope me-2 text-secondary"></i> dev@example.com</div>
+                                    <div class="mb-3"><i class="fa-solid fa-phone me-2 text-secondary"></i> +84 90 123 4567</div>
+                                    <div class="mb-3"><i class="fa-solid fa-location-dot me-2 text-secondary"></i> TP. Hồ Chí Minh</div>
+                                </div>
+                                <a href="#" class="btn btn-primary w-100 mt-auto rounded-pill"><i class="fa-solid fa-download me-2"></i>Download CV</a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card shadow-sm border-0">
-                    <div class="card-header bg-transparent py-3">
-                        <h5 class="mb-0"><i class="fa-solid fa-star text-warning me-2"></i> Kỹ Năng Chuyên Môn</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1"><span>HTML5 / CSS3</span><span>95%</span></div>
-                            <div class="progress" style="height: 10px;"><div class="progress-bar bg-primary" style="width: 95%"></div></div>
+                    <div class="col-lg-8">
+                        <div class="mb-5">
+                            <h2 class="fw-bold border-bottom pb-2 mb-4">Về bản thân</h2>
+                            <p class="lead text-body-secondary">"Code không chỉ là công việc, đó là nghệ thuật sắp đặt logic."</p>
+                            <p>Chào bạn, tôi là một lập trình viên với hơn 3 năm kinh nghiệm trong việc xây dựng các ứng dụng web đa nền tảng. Tôi yêu thích việc biến những ý tưởng phức tạp thành giao diện người dùng đơn giản, tinh tế và hiệu quả.</p>
                         </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1"><span>JavaScript / ES6</span><span>80%</span></div>
-                            <div class="progress" style="height: 10px;"><div class="progress-bar bg-warning" style="width: 80%"></div></div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between mb-1"><span>Bootstrap 5</span><span>90%</span></div>
-                            <div class="progress" style="height: 10px;"><div class="progress-bar bg-info" style="width: 90%"></div></div>
+
+                        <div class="mb-5">
+                            <h4 class="fw-bold mb-4"><i class="fa-solid fa-layer-group text-primary me-2"></i>Kỹ Năng</h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1 fw-bold"><span>HTML5 / CSS3</span><span>95%</span></div>
+                                        <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 95%"></div></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1 fw-bold"><span>JavaScript</span><span>85%</span></div>
+                                        <div class="progress" style="height: 8px;"><div class="progress-bar bg-warning" style="width: 85%"></div></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1 fw-bold"><span>ReactJS</span><span>80%</span></div>
+                                        <div class="progress" style="height: 8px;"><div class="progress-bar bg-info" style="width: 80%"></div></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex justify-content-between mb-1 fw-bold"><span>Bootstrap 5</span><span>90%</span></div>
+                                        <div class="progress" style="height: 8px;"><div class="progress-bar bg-success" style="width: 90%"></div></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
