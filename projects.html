@@ -3,157 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dự Án & Công Bố - MyPortfolio</title>
+    <title>Dự Án - MyPortfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .nav-pills .nav-link {
-            color: var(--text-light);
-            background-color: rgba(0,0,0,0.05);
-            margin-right: 10px;
-            border-radius: 50px;
-            padding: 10px 25px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        [data-bs-theme="dark"] .nav-pills .nav-link {
-            color: var(--text-dark);
-            background-color: rgba(255,255,255,0.1);
-        }
-        .nav-pills .nav-link.active {
-            background: var(--primary-gradient);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .tool-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: var(--accent-color);
-        }
-        .tool-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 15px;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .pub-item:hover { background-color: rgba(0,0,0,0.02); }
-        [data-bs-theme="dark"] .pub-item:hover { background-color: rgba(255,255,255,0.05); }
-    </style>
 </head>
 <body>
-
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 class="fs-5 m-0 fw-bold">MyPortfolio</h3>
-                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng"><i class="fa-solid fa-bars"></i></button>
             </div>
             <ul class="list-unstyled components">
                 <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Trang Chủ</span></a></li>
                 <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
-                <li>
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="true" class="dropdown-toggle align-items-center justify-content-between active-link">
-                        <div class="d-flex align-items-center"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></div>
-                    </a>
-                    <ul class="collapse show list-unstyled" id="pageSubmenu">
-                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Web Design</span></a></li>
-                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>App Dev</span></a></li>
-                    </ul>
-                </li>
+                <li><a href="projects.html" class="active-link"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></a></li>
                 <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
             </ul>
-            <div class="theme-btn-container">
-                <button id="themeToggle" title="Chế độ tối"><i class="fa-solid fa-moon"></i></button>
-            </div>
+            <div class="theme-btn-container"><button id="themeToggle"><i class="fa-solid fa-moon"></i></button></div>
         </nav>
 
         <div id="content">
             <nav class="navbar-mobile shadow-sm">
                 <button type="button" id="sidebarCollapse" class="btn btn-light btn-sm"><i class="fa-solid fa-bars"></i></button>
-                <span class="fw-bold">Dự Án & Nghiên Cứu</span>
-                <div style="width: 30px;"></div>
+                <span class="fw-bold">Dự Án</span><div style="width: 30px;"></div>
             </nav>
-
             <div class="container py-5 fade-in">
-                
                 <div class="mb-5">
                     <h2 class="fw-bold">Kho Tài Nguyên</h2>
-                    <p class="text-body-secondary">Các công cụ xử lý dữ liệu và danh sách các công trình nghiên cứu khoa học.</p>
+                    <p class="text-secondary">Công cụ xử lý dữ liệu và danh sách nghiên cứu khoa học.</p>
                 </div>
 
                 <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-toolbox-tab" data-bs-toggle="pill" data-bs-target="#pills-toolbox" type="button" role="tab" aria-controls="pills-toolbox" aria-selected="true">
-                            <i class="fa-solid fa-toolbox me-2"></i>Toolbox
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-publications-tab" data-bs-toggle="pill" data-bs-target="#pills-publications" type="button" role="tab" aria-controls="pills-publications" aria-selected="false">
-                            <i class="fa-solid fa-book-open me-2"></i>Publications
-                        </button>
-                    </li>
+                    <li class="nav-item"><button class="nav-link active" id="pills-toolbox-tab" data-bs-toggle="pill" data-bs-target="#pills-toolbox" type="button"><i class="fa-solid fa-toolbox me-2"></i>Toolbox</button></li>
+                    <li class="nav-item"><button class="nav-link" id="pills-publications-tab" data-bs-toggle="pill" data-bs-target="#pills-publications" type="button"><i class="fa-solid fa-book-open me-2"></i>Publications</button></li>
                 </ul>
 
                 <div class="tab-content" id="pills-tabContent">
-                    
-                    <div class="tab-pane fade show active" id="pills-toolbox" role="tabpanel" tabindex="0">
+                    <div class="tab-pane fade show active" id="pills-toolbox" tabindex="0">
                         <div class="row g-4">
                             <div class="col-md-4">
                                 <div class="card h-100 border-0 shadow-sm tool-card rounded-4">
                                     <div class="card-body p-4">
-                                        <div class="tool-icon bg-primary bg-opacity-10 text-primary">
-                                            <i class="fa-solid fa-circle-nodes"></i>
-                                        </div>
+                                        <div class="tool-icon bg-primary bg-opacity-10 text-primary"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <h5 class="card-title fw-bold">Cluster Data Visualizer</h5>
-                                        <p class="card-text text-body-secondary small">Công cụ trực quan hóa dữ liệu phân cụm trên nền tảng Google Apps Script.</p>
-                                        <button type="button" class="btn btn-outline-primary btn-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#clusterToolModal">
-                                            Khởi chạy <i class="fa-solid fa-play ms-1"></i>
-                                        </button>
+                                        <p class="small text-secondary">Trực quan hóa dữ liệu phân cụm trên Google Apps Script.</p>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#clusterToolModal">Khởi chạy <i class="fa-solid fa-play ms-1"></i></button>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <div class="card h-100 border-0 shadow-sm tool-card rounded-4">
                                     <div class="card-body p-4">
-                                        <div class="tool-icon bg-success bg-opacity-10 text-success">
-                                            <i class="fa-solid fa-file-medical"></i>
-                                        </div>
+                                        <div class="tool-icon bg-success bg-opacity-10 text-success"><i class="fa-solid fa-file-medical"></i></div>
                                         <h5 class="card-title fw-bold">Convert Data DICOM</h5>
-                                        <p class="card-text text-body-secondary small">Chuyển đổi ảnh y tế DICOM sang NIfTI/JPG, ẩn danh thông tin bệnh nhân.</p>
-                                        <a href="#" class="btn btn-outline-success btn-sm rounded-pill mt-2">Khởi chạy <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                        <p class="small text-secondary">Chuyển đổi ảnh DICOM sang NIfTI/JPG, ẩn danh dữ liệu.</p>
+                                        <button class="btn btn-outline-success btn-sm rounded-pill mt-2">Khởi chạy <i class="fa-solid fa-arrow-right ms-1"></i></button>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <div class="card h-100 border-0 shadow-sm tool-card rounded-4">
                                     <div class="card-body p-4">
-                                        <div class="tool-icon bg-warning bg-opacity-10 text-warning">
-                                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                                        </div>
+                                        <div class="tool-icon bg-warning bg-opacity-10 text-warning"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                                         <h5 class="card-title fw-bold">Harmonization for VBM</h5>
-                                        <p class="card-text text-body-secondary small">Chuẩn hóa dữ liệu đa trung tâm cho phân tích VBM.</p>
-                                        <a href="#" class="btn btn-outline-warning btn-sm rounded-pill mt-2">Khởi chạy <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                        <p class="small text-secondary">Chuẩn hóa dữ liệu đa trung tâm cho phân tích VBM.</p>
+                                        <button class="btn btn-outline-warning btn-sm rounded-pill mt-2">Khởi chạy <i class="fa-solid fa-arrow-right ms-1"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="pills-publications" role="tabpanel" tabindex="0">
+                    <div class="tab-pane fade" id="pills-publications" tabindex="0">
                         <div class="card border-0 shadow-sm mb-4 rounded-4 bg-body-tertiary">
                             <div class="card-body p-3">
                                 <div class="row g-3">
@@ -164,40 +87,39 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <select class="form-select border-0 bg-transparent" id="yearFilter">
-                                            <option value="all">Tất cả các năm</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2021">2021</option>
-                                        </select>
+                                        <div class="input-group">
+                                            <span class="input-group-text border-0 bg-transparent"><i class="fa-solid fa-calendar-days"></i></span>
+                                            <input type="number" class="form-control border-0 bg-transparent" id="yearInput" placeholder="Nhập năm (VD: 2023)">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="list-group shadow-sm rounded-4" id="publicationsList">
                             <div class="list-group-item p-4 border-0 mb-1 pub-item" data-year="2023">
                                 <div class="d-flex w-100 justify-content-between align-items-start">
                                     <h5 class="mb-1 fw-bold text-primary pub-title">Advanced Brain MRI Segmentation</h5>
                                     <span class="badge bg-primary rounded-pill">2023</span>
                                 </div>
-                                <p class="mb-2 text-body-secondary mt-2">Nghiên cứu áp dụng mạng nơ-ron tích chập (CNN) để phân đoạn khối u não.</p>
-                                <div class="d-flex gap-3 text-muted small mt-3">
-                                    <span><i class="fa-solid fa-users me-1"></i> Nguyen V.A</span>
-                                    <span><i class="fa-solid fa-book me-1"></i> IEEE Access</span>
-                                </div>
+                                <p class="mb-2 text-secondary mt-2">Áp dụng CNN để phân đoạn khối u não.</p>
+                                <div class="d-flex gap-3 text-muted small mt-3"><span><i class="fa-solid fa-users me-1"></i> Nguyen V.A</span><span><i class="fa-solid fa-book me-1"></i> IEEE Access</span></div>
                             </div>
                             <div class="list-group-item p-4 border-0 mb-1 pub-item" data-year="2022">
                                 <div class="d-flex w-100 justify-content-between align-items-start">
                                     <h5 class="mb-1 fw-bold text-primary pub-title">VBM Harmonization Study</h5>
                                     <span class="badge bg-secondary rounded-pill">2022</span>
                                 </div>
-                                <p class="mb-2 text-body-secondary mt-2">Nghiên cứu về chuẩn hóa dữ liệu đa trung tâm.</p>
+                                <p class="mb-2 text-secondary mt-2">Nghiên cứu về chuẩn hóa dữ liệu đa trung tâm.</p>
+                            </div>
+                            <div class="list-group-item p-4 border-0 mb-1 pub-item" data-year="2021">
+                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                    <h5 class="mb-1 fw-bold text-primary pub-title">DICOM Anonymization Protocol</h5>
+                                    <span class="badge bg-secondary rounded-pill">2021</span>
+                                </div>
+                                <p class="mb-2 text-secondary mt-2">Quy trình ẩn danh hóa dữ liệu y tế.</p>
                             </div>
                         </div>
-                        <div id="noResults" class="text-center py-5 d-none">
-                            <p class="text-muted">Không tìm thấy kết quả phù hợp.</p>
-                        </div>
+                        <div id="noResults" class="text-center py-5 d-none"><p class="text-muted">Không tìm thấy kết quả phù hợp.</p></div>
                     </div>
                 </div>
             </div>
@@ -208,19 +130,11 @@
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header border-0 shadow-sm" style="background-color: var(--bg-light); color: var(--text-light);">
-                    <h5 class="modal-title fw-bold">
-                        <i class="fa-solid fa-circle-nodes me-2 text-primary"></i>Cluster Data Visualizer
-                    </h5>
+                    <h5 class="modal-title fw-bold"><i class="fa-solid fa-circle-nodes me-2 text-primary"></i>Cluster Data Visualizer</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0" style="background: #fff;">
-                    <iframe 
-                        src="https://script.google.com/macros/s/AKfycbzJ7bNFqX_T6v7mkv7BC9c2WpRwDI7AOUeCYDbtfvuQdnPoIPG3fEWlQwtm0CbxW7W2zw/exec" 
-                        class="tool-frame" 
-                        title="Cluster Tool"
-                        style="width: 100%; height: 100%; border: none;"
-                        allow="fullscreen">
-                    </iframe>
+                    <iframe src="https://script.google.com/macros/s/AKfycbzJ7bNFqX_T6v7mkv7BC9c2WpRwDI7AOUeCYDbtfvuQdnPoIPG3fEWlQwtm0CbxW7W2zw/exec" style="width:100%; height:100%; border:none;" title="Cluster Tool"></iframe>
                 </div>
             </div>
         </div>
@@ -229,37 +143,28 @@
     <div id="overlay" class="overlay"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('searchInput');
-            const yearFilter = document.getElementById('yearFilter');
+            const yearInput = document.getElementById('yearInput');
             const pubItems = document.querySelectorAll('.pub-item');
             const noResults = document.getElementById('noResults');
-
-            function filterPublications() {
-                const searchTerm = searchInput.value.toLowerCase();
-                const selectedYear = yearFilter.value;
-                let visibleCount = 0;
-
+            function filterPubs() {
+                const term = searchInput.value.toLowerCase().trim();
+                const year = yearInput.value.trim();
+                let count = 0;
                 pubItems.forEach(item => {
                     const title = item.querySelector('.pub-title').textContent.toLowerCase();
-                    const year = item.getAttribute('data-year');
-                    const matchesSearch = title.includes(searchTerm);
-                    const matchesYear = selectedYear === 'all' || year === selectedYear;
-
-                    if (matchesSearch && matchesYear) {
-                        item.classList.remove('d-none');
-                        visibleCount++;
-                    } else {
-                        item.classList.add('d-none');
-                    }
+                    const itemYear = item.getAttribute('data-year');
+                    const matchSearch = title.includes(term);
+                    const matchYear = year === '' || itemYear.includes(year);
+                    if (matchSearch && matchYear) { item.classList.remove('d-none'); count++; } 
+                    else { item.classList.add('d-none'); }
                 });
-                if (visibleCount === 0) noResults.classList.remove('d-none');
-                else noResults.classList.add('d-none');
+                noResults.classList.toggle('d-none', count > 0);
             }
-            searchInput.addEventListener('input', filterPublications);
-            yearFilter.addEventListener('change', filterPublications);
+            searchInput.addEventListener('input', filterPubs);
+            yearInput.addEventListener('input', filterPubs);
         });
     </script>
 </body>

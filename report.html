@@ -2,81 +2,44 @@
 <html lang="vi" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Báo Lỗi - MyPortfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 class="fs-5 m-0 fw-bold">MyPortfolio</h3>
-                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng"><i class="fa-solid fa-bars"></i></button>
             </div>
             <ul class="list-unstyled components">
                 <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Trang Chủ</span></a></li>
                 <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
-                <li>
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle align-items-center justify-content-between">
-                        <div class="d-flex align-items-center"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></div>
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li><a href="projects.html" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Tất cả</span></a></li>
-                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Web Design</span></a></li>
-                    </ul>
-                </li>
+                <li><a href="projects.html"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></a></li>
                 <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
             </ul>
-            <div class="theme-btn-container">
-                <button id="themeToggle" title="Chế độ tối"><i class="fa-solid fa-moon"></i></button>
-            </div>
+            <div class="theme-btn-container"><button id="themeToggle"><i class="fa-solid fa-moon"></i></button></div>
         </nav>
-
         <div id="content">
             <nav class="navbar-mobile shadow-sm">
                 <button type="button" id="sidebarCollapse" class="btn btn-light btn-sm"><i class="fa-solid fa-bars"></i></button>
-                <span class="fw-bold">Báo Lỗi</span>
-                <div style="width: 30px;"></div>
+                <span class="fw-bold">Báo Lỗi</span><div style="width: 30px;"></div>
             </nav>
-
             <div class="container py-5 fade-in">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="card shadow border-0">
-                            <div class="card-header bg-danger text-white py-3">
-                                <h5 class="mb-0"><i class="fa-solid fa-triangle-exclamation me-2"></i>Báo Cáo Sự Cố</h5>
-                            </div>
+                            <div class="card-header bg-danger text-white py-3"><h5 class="mb-0"><i class="fa-solid fa-triangle-exclamation me-2"></i>Báo Cáo Sự Cố</h5></div>
                             <div class="card-body p-4">
-                                <p class="card-text text-body-secondary mb-4">Chúng tôi rất tiếc nếu bạn gặp phải sự cố. Vui lòng điền thông tin chi tiết.</p>
                                 <form>
                                     <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="name" class="form-label fw-bold">Họ và Tên</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                                                <input type="text" class="form-control" id="name" placeholder="Nguyễn Văn A">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-3 mt-md-0">
-                                            <label for="email" class="form-label fw-bold">Email</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-                                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                                            </div>
-                                        </div>
+                                        <div class="col-md-6"><label class="form-label fw-bold">Tên</label><input type="text" class="form-control" placeholder="Tên của bạn"></div>
+                                        <div class="col-md-6"><label class="form-label fw-bold">Email</label><input type="email" class="form-control" placeholder="name@example.com"></div>
                                     </div>
-                                    <div class="mb-4">
-                                        <label for="description" class="form-label fw-bold">Mô tả chi tiết lỗi</label>
-                                        <textarea class="form-control" id="description" rows="5" placeholder="Vui lòng mô tả các bước để tái hiện lỗi..."></textarea>
-                                    </div>
-                                    <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary btn-lg"><i class="fa-solid fa-paper-plane me-2"></i>Gửi Báo Cáo</button>
-                                    </div>
+                                    <div class="mb-4"><label class="form-label fw-bold">Mô tả lỗi</label><textarea class="form-control" rows="5" placeholder="Chi tiết lỗi..."></textarea></div>
+                                    <div class="d-grid"><button type="submit" class="btn btn-primary btn-lg">Gửi Báo Cáo</button></div>
                                 </form>
                             </div>
                         </div>
@@ -85,7 +48,6 @@
             </div>
         </div>
     </div>
-
     <div id="overlay" class="overlay"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>

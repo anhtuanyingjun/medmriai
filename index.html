@@ -9,111 +9,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 class="fs-5 m-0 fw-bold">MyPortfolio</h3>
-                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng"><i class="fa-solid fa-bars"></i></button>
             </div>
-
             <ul class="list-unstyled components">
-                <li>
-                    <a href="index.html">
-                        <i class="fa-solid fa-house"></i> <span>Trang Chủ</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="about.html">
-                        <i class="fa-solid fa-user"></i> <span>Giới Thiệu</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <i class="fa-solid fa-folder-open"></i> <span>Dự Án</span>
-                        </div>
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li><a href="projects.html" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Tất cả</span></a></li>
-                        <li><a href="#" class="ps-4"><i class="fa-solid fa-caret-right fs-6"></i> <span>Web Design</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="report.html">
-                        <i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span>
-                    </a>
-                </li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Trang Chủ</span></a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
+                <li><a href="projects.html"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></a></li>
+                <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
             </ul>
-
             <div class="theme-btn-container">
-                <button id="themeToggle" title="Chế độ tối">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
+                <button id="themeToggle" title="Chế độ tối"><i class="fa-solid fa-moon"></i></button>
             </div>
         </nav>
 
         <div id="content">
             <nav class="navbar-mobile shadow-sm">
-                <button type="button" id="sidebarCollapse" class="btn btn-light btn-sm">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+                <button type="button" id="sidebarCollapse" class="btn btn-light btn-sm"><i class="fa-solid fa-bars"></i></button>
                 <span class="fw-bold">Trang Chủ</span>
                 <div style="width: 30px;"></div>
             </nav>
-
             <div class="container-fluid p-0">
                 <section class="hero-section d-flex align-items-center justify-content-center flex-column fade-in">
                     <h1 class="display-4 fw-bold text-center">Sáng Tạo Không Giới Hạn</h1>
-                    <p class="lead mb-4 text-center">Xây dựng giải pháp công nghệ hiện đại và trải nghiệm người dùng tối ưu.</p>
+                    <p class="lead mb-4 text-center">Giải pháp công nghệ hiện đại và trải nghiệm người dùng tối ưu.</p>
                     <a href="about.html" class="btn btn-accent btn-lg shadow">Khám Phá Ngay <i class="fa-solid fa-arrow-right"></i></a>
                 </section>
-
                 <div class="container py-5 fade-in">
                     <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body text-center p-4">
-                                    <div class="mb-3 text-primary"><i class="fa-solid fa-laptop-code fa-3x"></i></div>
-                                    <h5 class="card-title">Frontend Dev</h5>
-                                    <p class="card-text text-body-secondary">HTML5, CSS3, JS, ReactJS với giao diện Responsive.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body text-center p-4">
-                                    <div class="mb-3 text-success"><i class="fa-solid fa-server fa-3x"></i></div>
-                                    <h5 class="card-title">Backend Ready</h5>
-                                    <p class="card-text text-body-secondary">Tích hợp API và quản lý dữ liệu hiệu quả.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body text-center p-4">
-                                    <div class="mb-3 text-danger"><i class="fa-solid fa-wand-magic-sparkles fa-3x"></i></div>
-                                    <h5 class="card-title">UI/UX Design</h5>
-                                    <p class="card-text text-body-secondary">Thiết kế hiện đại, tập trung vào trải nghiệm người dùng.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="col-md-4"><div class="card h-100 shadow-sm border-0"><div class="card-body text-center p-4"><div class="mb-3 text-primary"><i class="fa-solid fa-laptop-code fa-3x"></i></div><h5 class="card-title">Frontend Dev</h5><p class="text-secondary">HTML5, CSS3, JS, ReactJS.</p></div></div></div>
+                        <div class="col-md-4"><div class="card h-100 shadow-sm border-0"><div class="card-body text-center p-4"><div class="mb-3 text-success"><i class="fa-solid fa-server fa-3x"></i></div><h5 class="card-title">Backend Ready</h5><p class="text-secondary">Tích hợp API và quản lý dữ liệu.</p></div></div></div>
+                        <div class="col-md-4"><div class="card h-100 shadow-sm border-0"><div class="card-body text-center p-4"><div class="mb-3 text-danger"><i class="fa-solid fa-wand-magic-sparkles fa-3x"></i></div><h5 class="card-title">Data Analysis</h5><p class="text-secondary">Xử lý dữ liệu và hình ảnh y tế.</p></div></div></div>
                     </div>
                 </div>
-
-                <footer class="bg-body-tertiary text-center py-4 mt-5">
-                    <div class="container">
-                        <p class="mb-0 text-body-secondary">&copy; 2025 MRI AI PROJECT.</p>
-                    </div>
-                </footer>
             </div>
         </div>
     </div>
-
     <div id="overlay" class="overlay"></div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
