@@ -1,166 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
 :root {
     --sidebar-width: 260px;
     --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7c4dff 100%);
     --accent-color: #ff9f43;
     --transition-speed: 0.3s;
 }
+body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }
+.wrapper { display: flex; width: 100%; align-items: stretch; }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden; /* Ngăn cuộn ngang */
-}
-
-/* --- Layout Wrapper --- */
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
-
-/* --- Sidebar Styles --- */
+/* Sidebar */
 #sidebar {
-    min-width: var(--sidebar-width);
-    max-width: var(--sidebar-width);
-    background: var(--primary-gradient);
-    color: #fff;
+    min-width: var(--sidebar-width); max-width: var(--sidebar-width);
+    background: var(--primary-gradient); color: #fff;
     transition: all var(--transition-speed);
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    z-index: 1050; /* Cao hơn nội dung */
-    display: flex;
-    flex-direction: column;
+    height: 100vh; position: sticky; top: 0; z-index: 1050;
+    display: flex; flex-direction: column;
+    backdrop-filter: blur(10px); box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
 }
+#sidebar .sidebar-header { padding: 20px; background: rgba(0, 0, 0, 0.1); }
+#sidebar ul.components { padding: 20px 0; flex-grow: 1; }
+#sidebar ul li a { padding: 15px 20px; display: block; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: 0.3s; border-left: 4px solid transparent; }
+#sidebar ul li a:hover, #sidebar ul li a.active-link { background: rgba(255, 255, 255, 0.15); color: #fff; border-left: 4px solid var(--accent-color); }
+#sidebar ul li a i { margin-right: 10px; width: 25px; text-align: center; }
 
-/* Backdrop Filter cho hiệu ứng kính */
-#sidebar {
-    backdrop-filter: blur(10px);
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
-}
+/* Content */
+#content { width: 100%; min-height: 100vh; transition: all var(--transition-speed); }
+.navbar-mobile { display: none; padding: 15px; background: var(--primary-gradient); color: white; align-items: center; justify-content: space-between; }
 
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.1);
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-    flex-grow: 1; /* Đẩy phần footer sidebar xuống dưới */
-}
-
-#sidebar ul li a {
-    padding: 15px 20px;
-    display: block;
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    transition: 0.3s;
-    border-left: 4px solid transparent;
-}
-
-#sidebar ul li a:hover, #sidebar ul li a.active-link {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    border-left: 4px solid var(--accent-color);
-}
-
-#sidebar ul li a i {
-    margin-right: 10px;
-    width: 25px;
-    text-align: center;
-}
-
-/* --- Content Styles --- */
-#content {
-    width: 100%;
-    min-height: 100vh;
-    transition: all var(--transition-speed);
-}
-
-/* Mobile Navbar Toggle */
-.navbar-mobile {
-    display: none; /* Mặc định ẩn trên desktop */
-    padding: 15px;
-    background: var(--primary-gradient);
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* --- Responsive Logic (QUAN TRỌNG) --- */
+/* Mobile Logic */
 @media (max-width: 768px) {
-    /* Trên Mobile: Sidebar mặc định ẩn sang trái */
-    #sidebar {
-        position: fixed;
-        left: -260px; /* Ẩn hẳn */
-        height: 100vh;
-        width: var(--sidebar-width);
-    }
-
-    /* Khi có class .active -> Trượt ra */
-    #sidebar.active {
-        left: 0;
-    }
-
-    /* Hiển thị thanh top bar trên mobile */
-    .navbar-mobile {
-        display: flex;
-    }
-    
-    /* Overlay che mờ nội dung khi mở menu */
-    .overlay {
-        display: none;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1040; /* Thấp hơn sidebar (1050) nhưng cao hơn content */
-        opacity: 0;
-        transition: all 0.5s ease-in-out;
-    }
-    
-    .overlay.active {
-        display: block;
-        opacity: 1;
-    }
+    #sidebar { position: fixed; left: -260px; height: 100vh; width: var(--sidebar-width); }
+    #sidebar.active { left: 0; }
+    .navbar-mobile { display: flex; }
+    .overlay { display: none; position: fixed; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5); z-index: 1040; opacity: 0; transition: all 0.5s ease-in-out; }
+    .overlay.active { display: block; opacity: 1; }
 }
 
-/* --- Hero & Custom Elements --- */
-.hero-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-    border-radius: 0 0 20px 20px;
-}
-
-.btn-accent {
-    background-color: var(--accent-color);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 25px;
-    font-weight: bold;
-}
-.btn-accent:hover {
-    filter: brightness(1.1);
-    color: white;
-}
-
-/* Fade In Animation */
-.fade-in {
-    animation: fadeIn 0.8s ease-in-out;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- Dark Mode Customization --- */
-/* Bootstrap 5.3 xử lý màu nền chính, ta chỉ chỉnh chi tiết phụ */
-[data-bs-theme="dark"] .hero-section {
-    box-shadow: 0 4px 20px rgba(255,255,255,0.05);
-}
+/* Misc */
+.hero-section { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 20px; border-radius: 0 0 20px 20px; }
+.btn-accent { background-color: var(--accent-color); color: #fff; border: none; border-radius: 50px; padding: 10px 25px; font-weight: bold; }
+.btn-accent:hover { filter: brightness(1.1); color: white; }
+.fade-in { animation: fadeIn 0.8s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+[data-bs-theme="dark"] .hero-section { box-shadow: 0 4px 20px rgba(255,255,255,0.05); }
