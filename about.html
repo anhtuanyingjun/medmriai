@@ -9,63 +9,147 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3 class="fs-5 m-0 fw-bold">MyPortfolio</h3>
-                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng"><i class="fa-solid fa-bars"></i></button>
+                <button id="sidebarToggleDesktop" title="Thu gọn/Mở rộng">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
             <ul class="list-unstyled components">
                 <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Trang Chủ</span></a></li>
-                <li><a href="about.html"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
+                <li><a href="about.html" class="active-link"><i class="fa-solid fa-user"></i> <span>Giới Thiệu</span></a></li>
                 <li><a href="projects.html"><i class="fa-solid fa-folder-open"></i> <span>Dự Án</span></a></li>
                 <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Báo Lỗi</span></a></li>
             </ul>
-            <div class="theme-btn-container"><button id="themeToggle"><i class="fa-solid fa-moon"></i></button></div>
+            <div class="theme-btn-container">
+                <button id="themeToggle" title="Chế độ tối"><i class="fa-solid fa-moon"></i></button>
+            </div>
         </nav>
+
         <div id="content">
             <nav class="navbar-mobile shadow-sm">
                 <button type="button" id="sidebarCollapse" class="btn btn-light btn-sm"><i class="fa-solid fa-bars"></i></button>
-                <span class="fw-bold">Giới Thiệu</span><div style="width: 30px;"></div>
+                <span class="fw-bold">Giới Thiệu</span>
+                <div style="width: 30px;"></div>
             </nav>
+
             <div class="container py-5 fade-in">
                 <div class="row g-5">
-                    <div class="col-lg-4 text-center text-lg-start">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body p-4 d-flex flex-column align-items-center">
+                    
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm text-center h-100">
+                            <div class="card-body p-4">
                                 <div class="profile-img-container mb-4">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Avatar" class="profile-img">
+                                    <img src="images/profile.png" 
+                                         onerror="this.src='https://via.placeholder.com/300x300?text=Profile+Image'" 
+                                         alt="Profile Avatar" 
+                                         class="profile-img">
                                 </div>
-                                <h3 class="fw-bold">Nguyễn Văn Dev</h3>
-                                <p class="text-primary fw-medium">Fullstack & Data Engineer</p>
-                                <div class="d-flex gap-2 mt-2">
-                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#" class="btn btn-outline-primary rounded-circle"><i class="fa-brands fa-linkedin-in"></i></a>
-                                </div>
-                                <hr class="w-100 my-4">
-                                <div class="w-100 text-start">
-                                    <div class="mb-3"><i class="fa-solid fa-envelope me-2 text-secondary"></i> dev@example.com</div>
-                                    <div class="mb-3"><i class="fa-solid fa-location-dot me-2 text-secondary"></i> TP. Hồ Chí Minh</div>
+                                
+                                <h3 class="fw-bold mb-1">Nguyễn Văn Dev</h3>
+                                <p class="text-primary fw-medium mb-4">Data Scientist / Researcher</p>
+
+                                <div class="text-start border-top pt-4">
+                                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-address-card me-2 text-primary"></i>Contact</h5>
+                                    
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <div class="icon-box me-3 text-secondary"><i class="fa-solid fa-envelope fa-lg"></i></div>
+                                        <div>
+                                            <small class="text-muted d-block">Email</small>
+                                            <a href="mailto:contact@example.com" class="text-decoration-none text-body fw-medium">contact@example.com</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <div class="icon-box me-3 text-secondary"><i class="fa-solid fa-phone fa-lg"></i></div>
+                                        <div>
+                                            <small class="text-muted d-block">Phone</small>
+                                            <span class="fw-medium">+84 90 123 4567</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <div class="icon-box me-3 text-secondary"><i class="fa-brands fa-linkedin fa-lg"></i></div>
+                                        <div>
+                                            <small class="text-muted d-block">LinkedIn</small>
+                                            <a href="#" class="text-decoration-none text-body fw-medium">linkedin.com/in/nguyenvandev</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon-box me-3 text-secondary"><i class="fa-solid fa-location-dot fa-lg"></i></div>
+                                        <div>
+                                            <small class="text-muted d-block">Location</small>
+                                            <span class="fw-medium">Ho Chi Minh City, VN</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-8">
-                        <h2 class="fw-bold border-bottom pb-2 mb-4">Về bản thân</h2>
-                        <p class="lead text-secondary">"Code không chỉ là công việc, đó là nghệ thuật sắp đặt logic."</p>
-                        <p>Tôi là lập trình viên đam mê xây dựng các ứng dụng web và công cụ xử lý dữ liệu. Với nền tảng về cả Frontend và Data Analysis, tôi tập trung vào việc tạo ra các sản phẩm vừa trực quan vừa hiệu quả.</p>
-                        <div class="mt-5">
-                            <h4 class="fw-bold mb-4">Kỹ Năng</h4>
-                            <div class="row g-3">
-                                <div class="col-md-6"><div class="d-flex justify-content-between mb-1 fw-bold"><span>HTML/CSS/JS</span><span>90%</span></div><div class="progress" style="height:8px"><div class="progress-bar bg-primary" style="width:90%"></div></div></div>
-                                <div class="col-md-6"><div class="d-flex justify-content-between mb-1 fw-bold"><span>Data Processing</span><span>85%</span></div><div class="progress" style="height:8px"><div class="progress-bar bg-success" style="width:85%"></div></div></div>
+                        
+                        <div class="mb-5">
+                            <h2 class="fw-bold border-bottom pb-2 mb-4">About Me</h2>
+                            <p class="lead text-body-secondary">"Dữ liệu không chỉ là con số, nó là câu chuyện đang chờ được kể."</p>
+                            <p>Xin chào, tôi là một nhà nghiên cứu và kỹ sư dữ liệu với niềm đam mê sâu sắc trong lĩnh vực Y sinh và Trí tuệ nhân tạo. Với nền tảng vững chắc về khoa học máy tính và y học, tôi tập trung vào việc xây dựng các công cụ hỗ trợ chẩn đoán hình ảnh và phân tích dữ liệu gen.</p>
+                            <p>Mục tiêu của tôi là áp dụng các thuật toán học máy tiên tiến để giải quyết các bài toán thực tế trong y tế, giúp cải thiện chất lượng chăm sóc sức khỏe cộng đồng.</p>
+                        </div>
+
+                        <div class="mb-5">
+                            <h4 class="fw-bold mb-3"><i class="fa-solid fa-microscope me-2 text-primary"></i>Research Interests</h4>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 border border-primary border-opacity-25">Medical Image Analysis</span>
+                                <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 border border-primary border-opacity-25">Deep Learning (CNNs, Transformers)</span>
+                                <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 border border-primary border-opacity-25">Bioinformatics</span>
+                                <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 border border-primary border-opacity-25">Genomics Data Clustering</span>
+                                <span class="badge rounded-pill bg-primary bg-opacity-10 text-primary px-3 py-2 fs-6 border border-primary border-opacity-25">Neuroimaging (MRI/fMRI)</span>
                             </div>
                         </div>
+
+                        <div>
+                            <h4 class="fw-bold mb-4"><i class="fa-solid fa-graduation-cap me-2 text-primary"></i>Education</h4>
+                            
+                            <div class="list-group shadow-sm rounded-4">
+                                <div class="list-group-item border-0 p-4 mb-1">
+                                    <div class="d-flex justify-content-between align-items-start flex-column flex-md-row">
+                                        <div>
+                                            <h5 class="fw-bold mb-1">M.S. in Computer Science</h5>
+                                            <p class="text-primary mb-1">University of Technology (HCMC)</p>
+                                        </div>
+                                        <span class="badge bg-secondary rounded-pill">2020 - 2022</span>
+                                    </div>
+                                    <p class="text-body-secondary mt-2 mb-0 small">
+                                        <strong>Thesis:</strong> "Advanced harmonization techniques for multi-site MRI data."<br>
+                                        <strong>GPA:</strong> 3.8/4.0
+                                    </p>
+                                </div>
+
+                                <div class="list-group-item border-0 p-4">
+                                    <div class="d-flex justify-content-between align-items-start flex-column flex-md-row">
+                                        <div>
+                                            <h5 class="fw-bold mb-1">B.S. in Biomedical Engineering</h5>
+                                            <p class="text-primary mb-1">International University</p>
+                                        </div>
+                                        <span class="badge bg-secondary rounded-pill">2016 - 2020</span>
+                                    </div>
+                                    <p class="text-body-secondary mt-2 mb-0 small">
+                                        Graduated with Honors. Focused on signal processing and medical instrumentation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div id="overlay" class="overlay"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
