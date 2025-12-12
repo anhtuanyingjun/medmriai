@@ -1,45 +1,259 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* styles.css */
+/* CSS Variables cho dark mode */
 :root {
-    --sidebar-width: 260px;
-    --primary-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7c4dff 100%);
-    --accent-color: #ff9f43;
-    --transition-speed: 0.3s;
+    --bg-color: #f0f4f8;
+    --text-color: #333;
+    --card-bg: #fff;
+    --primary-color: #007bff;
+    --accent-color: #fd7e14;
+    --footer-bg: #343a40;
+    --navbar-bg: linear-gradient(to bottom, #007bff, #6f42c1); /* Gradient blur chủ đạo */
+    --navbar-text: #fff;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --input-bg: #fff;
+    --input-text: #333;
+    --btn-outline-border: #fff;
 }
-body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }
-.wrapper { display: flex; width: 100%; align-items: stretch; }
 
-/* Sidebar */
-#sidebar {
-    min-width: var(--sidebar-width); max-width: var(--sidebar-width);
-    background: var(--primary-gradient); color: #fff;
-    transition: all var(--transition-speed);
-    height: 100vh; position: sticky; top: 0; z-index: 1050;
-    display: flex; flex-direction: column;
-    backdrop-filter: blur(10px); box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #0d6efd;
+    --accent-color: #fd7e14;
+    --footer-bg: #000;
+    --navbar-bg: linear-gradient(to bottom, #1e1e1e, #333);
+    --navbar-text: #e0e0e0;
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    --input-bg: #333;
+    --input-text: #e0e0e0;
+    --btn-outline-border: #e0e0e0;
 }
-#sidebar .sidebar-header { padding: 20px; background: rgba(0, 0, 0, 0.1); }
-#sidebar ul.components { padding: 20px 0; flex-grow: 1; }
-#sidebar ul li a { padding: 15px 20px; display: block; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: 0.3s; border-left: 4px solid transparent; }
-#sidebar ul li a:hover, #sidebar ul li a.active-link { background: rgba(255, 255, 255, 0.15); color: #fff; border-left: 4px solid var(--accent-color); }
-#sidebar ul li a i { margin-right: 10px; width: 25px; text-align: center; }
 
-/* Content */
-#content { width: 100%; min-height: 100vh; transition: all var(--transition-speed); }
-.navbar-mobile { display: none; padding: 15px; background: var(--primary-gradient); color: white; align-items: center; justify-content: space-between; }
+/* Body và Layout */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* Ngăn scroll ngang khi sidebar mở */
+}
 
-/* Mobile Logic */
+/* Sidebar bên trái - Thêm slide animation */
+.sidebar {
+    width: 250px;
+    background: var(--navbar-bg);
+    color: var(--navbar-text);
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Slide từ trái */
+    transform: translateX(0); /* Default mở */
+}
+
+.sidebar.closed {
+    transform: translateX(-100%); /* Slide ra ngoài trái khi đóng */
+}
+
+.sidebar .sidebar-content {
+    display: block; /* Luôn hiển thị nội dung khi sidebar mở */
+}
+
+#sidebar-toggle {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-link {
+    color: var(--navbar-text);
+    transition: color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Content - Điều chỉnh margin khi sidebar đóng/mở */
+.content {
+    flex: 1;
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+}
+
+.sidebar.closed + .content {
+    margin-left: 0;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    color: #fff;
+    position: relative;
+    backdrop-filter: blur(5px); /* Thêm blur nhẹ cho hero */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-mode .hero {
+    filter: brightness(0.8);
+}
+
+/* Nội dung chính */
+.main-content {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-content h1, .card-title {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.main-content p, .card-text {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+/* Form elements cho dark mode */
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-label {
+    color: var(--text-color);
+}
+
+/* Animation fade-in */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress bars */
+.progress-bar {
+    transition: width 0.5s ease;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    padding: 40px 0;
+    margin-top: auto; /* Đẩy footer xuống dưới */
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons i {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons i:hover {
+    color: var(--accent-color);
+}
+
+/* Card cho about */
+.card {
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive cho mobile: Sidebar default đóng, toggle fixed */
 @media (max-width: 768px) {
-    #sidebar { position: fixed; left: -260px; height: 100vh; width: var(--sidebar-width); }
-    #sidebar.active { left: 0; }
-    .navbar-mobile { display: flex; }
-    .overlay { display: none; position: fixed; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5); z-index: 1040; opacity: 0; transition: all 0.5s ease-in-out; }
-    .overlay.active { display: block; opacity: 1; }
+    .sidebar {
+        transform: translateX(-100%); /* Default đóng trên mobile */
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Mở khi toggle */
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .sidebar.active + .content {
+        margin-left: 0; /* Trên mobile, sidebar overlay thay vì push content */
+        opacity: 0.5; /* Làm mờ content khi sidebar mở để tập trung */
+        pointer-events: none; /* Ngăn click content khi sidebar mở */
+    }
+
+    #sidebar-toggle {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1001;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 20px 0;
+    }
 }
 
-/* Misc */
-.hero-section { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 20px; border-radius: 0 0 20px 20px; }
-.btn-accent { background-color: var(--accent-color); color: #fff; border: none; border-radius: 50px; padding: 10px 25px; font-weight: bold; }
-.btn-accent:hover { filter: brightness(1.1); color: white; }
-.fade-in { animation: fadeIn 0.8s ease-in-out; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-[data-bs-theme="dark"] .hero-section { box-shadow: 0 4px 20px rgba(255,255,255,0.05); }
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
