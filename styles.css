@@ -108,7 +108,18 @@ body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }
 
 /* --- Content & Components --- */
 #content { width: 100%; min-height: 100vh; transition: 0.3s; }
-.hero-section { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; color: white; padding: 80px 20px; border-radius: 0 0 20px 20px; }
+
+/* --- HERO SECTION (ĐÃ CẬP NHẬT ẢNH LOCAL) --- */
+.hero-section { 
+    /* Thay đổi đường dẫn tại đây */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/background.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    padding: 80px 20px; 
+    border-radius: 0 0 20px 20px; 
+}
+
 .btn-accent { background-color: var(--accent-color); color: #fff; border: none; border-radius: 50px; padding: 10px 25px; font-weight: bold; }
 .btn-accent:hover { filter: brightness(1.1); color: white; }
 
